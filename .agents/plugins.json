@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "path": "./plugins/stitch-design"
+    },
+    {
+      "path": "./plugins/stitch-build"
+    },
+    {
+      "path": "./plugins/stitch-utilities"
+    }
+  ]
+}

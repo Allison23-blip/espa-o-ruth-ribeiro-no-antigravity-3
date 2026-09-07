@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Carrinho de Procedimentos &amp; Agendamento | Espaço Ruth Ribeiro</title>
+  <meta name="description" content="Revise seus procedimentos escolhidos, escolha o dia e horário ideal e confirme seu agendamento no Espaço Ruth Ribeiro — Atelier Botânico &amp; Cachos.">
+  <meta name="theme-color" content="#9b6250">
+  <link rel="icon" type="image/png" href="assets/images/logo_atelier.png">
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "terracota": "#7f4a3a",
+            "terracota-dark": "#6a3a2a",
+            "terracota-light": "#9b6250",
+            "salvia": "#54624f",
+            "salvia-light": "#d8e7cf",
+            "rosa-nude": "#c48b77",
+            "creme": "#faf7f2",
+            "aveia": "#f3ece2",
+            "cafe": "#2c2320",
+            "borda": "#e8ddd2"
+          },
+          fontFamily: {
+            serif: ["Playfair Display", "serif"],
+            sans: ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF7F2;
+      color: #2C2320;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-shine::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+      transform: rotate(25deg);
+      transition: all 0.75s ease-out;
+    }
+    .btn-shine:hover::after {
+      left: 120%;
+    }
+    .card-item-enter {
+      animation: fadeInSlide 0.3s ease-out forwards;
+    }
+    @keyframes fadeInSlide {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .toast-anim {
+      animation: toastIn 0.3s ease-out forwards, toastOut 0.3s ease-in forwards 2.5s;
+    }
+    @keyframes toastIn {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes toastOut {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(100%); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="bg-creme text-cafe antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header Global -->
+  <header class="sticky top-0 z-50 w-full bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E8DDD2] transition-all duration-300">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+    <a class="flex items-center gap-3 group" href="index.html">
+      <img alt="Logo Atelier Botânico &amp; Cachos" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="assets/images/logo_atelier.png">
+      <span class="font-serif text-xl text-[#7f4a3a] tracking-tight font-medium">Atelier Botânico &amp; Cachos</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-6">
+      <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="index.html">Início</a>
+      <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="sobre.html">Quem Somos</a>
+      <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="servicos.html">Serviços &amp; Preços</a>
+      <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="index.html#galeria">Antes e Depois</a>
+      <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="index.html#depoimentos">Depoimentos</a>
+      <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="index.html#localizacao">Localização</a>
+    </nav>
+    <div class="flex items-center gap-3.5">
+      <!-- Carrinho Button with Dynamic Badge -->
+      <a href="carrinho.html" class="relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#54624f] text-white transition-all hover:scale-105 active:scale-95 shadow-sm" title="Meu Carrinho de Procedimentos">
+        <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+        <span class="global-cart-badge absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#7f4a3a] text-white text-[11px] font-bold flex items-center justify-center border-2 border-white shadow-sm">0</span>
+      </a>
+      <a class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#7f4a3a] text-white hover:bg-[#6a3a2a] text-xs font-semibold tracking-wide uppercase transition-all duration-300 shadow-sm hover:scale-105 active:scale-95" href="carrinho.html">
+        Agendar Horário
+      </a>
+    </div>
+  </div>
+</header>
+
+  <!-- Main Content -->
+  <main class="max-w-[1280px] mx-auto px-6 md:px-12 py-10 flex-1 w-full">
+    
+    <!-- Breadcrumb & Header Title -->
+    <div class="mb-8">
+      <div class="flex items-center gap-2 text-sm text-[#52443f]/80 mb-2">
+        <a href="index.html" class="hover:text-terracota transition-colors">Início</a>
+        <span>/</span>
+        <a href="servicos.html" class="hover:text-terracota transition-colors">Serviços</a>
+        <span>/</span>
+        <span class="text-terracota font-medium">Carrinho &amp; Agendamento</span>
+      </div>
+      <h1 class="font-serif text-3xl md:text-4xl text-terracota font-medium tracking-tight">
+        Seu Carrinho de Cuidados
+      </h1>
+      <p class="text-[#52443f] mt-1 text-base max-w-2xl">
+        Revise os procedimentos selecionados, remova itens se desejar, escolha a data e o horário ideal para a sua visita.
+      </p>
+    </div>
+
+    <!-- Layout 2 Colunas -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- Coluna Esquerda: Lista de Procedimentos + Seletor de Data/Hora + Formulário -->
+      <div class="lg:col-span-8 flex flex-col gap-8">
+        
+        <!-- 1. Lista de Serviços Escolhidos -->
+        <section class="bg-white rounded-2xl border border-borda p-6 shadow-sm">
+          <div class="flex items-center justify-between pb-4 mb-4 border-b border-borda">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-terracota text-2xl">spa</span>
+              <h2 class="font-serif text-xl text-cafe font-medium">Procedimentos Escolhidos</h2>
+            </div>
+            <span id="cart-item-count" class="text-xs font-semibold px-2.5 py-1 rounded-full bg-aveia text-terracota">
+              0 serviços
+            </span>
+          </div>
+
+          <!-- Container dos Itens do Carrinho -->
+          <div id="cart-items-container" class="flex flex-col gap-3">
+            <!-- Injetado via JS -->
+          </div>
+
+          <!-- Estado Vazio (quando não há itens) -->
+          <div id="cart-empty-state" class="hidden flex-col items-center justify-center py-12 text-center">
+            <div class="w-16 h-16 rounded-full bg-aveia flex items-center justify-center text-terracota mb-4">
+              <span class="material-symbols-outlined text-3xl">shopping_basket</span>
+            </div>
+            <h3 class="font-serif text-lg font-medium text-cafe">Seu carrinho está vazio</h3>
+            <p class="text-sm text-[#52443f] max-w-sm mt-1 mb-6">
+              Você ainda não adicionou nenhum procedimento ao seu carrinho. Explore nosso cardápio botânico!
+            </p>
+            <a href="servicos.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-terracota text-white text-sm font-medium hover:bg-terracota-dark transition-all shadow-sm">
+              <span class="material-symbols-outlined text-lg">arrow_back</span>
+              Explorar Cardápio de Serviços
+            </a>
+          </div>
+
+          <!-- Ação para Adicionar Mais Serviços -->
+          <div id="cart-actions-bottom" class="mt-6 pt-4 border-t border-borda flex flex-wrap items-center justify-between gap-4">
+            <a href="servicos.html" class="inline-flex items-center gap-2 text-sm font-medium text-salvia hover:text-terracota transition-colors">
+              <span class="material-symbols-outlined text-lg">add_circle</span>
+              Adicionar outro procedimento do cardápio
+            </a>
+            <button id="btn-clear-cart" class="text-xs text-[#8c817b] hover:text-red-600 transition-colors flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">delete_sweep</span>
+              Limpar todos os itens
+            </button>
+          </div>
+        </section>
+
+        <!-- 2. Escolha do Dia do Atendimento -->
+        <section class="bg-white rounded-2xl border border-borda p-6 shadow-sm">
+          <div class="flex items-center gap-2 pb-4 mb-4 border-b border-borda">
+            <span class="material-symbols-outlined text-terracota text-2xl">event</span>
+            <div>
+              <h2 class="font-serif text-xl text-cafe font-medium">Escolha o Dia do Atendimento</h2>
+              <p class="text-xs text-[#52443f]">Selecione a data que melhor se adapta à sua rotina (Terça a Sábado)</p>
+            </div>
+          </div>
+
+          <!-- Carrossel / Grade de Dias Úteis Próximos -->
+          <div id="date-picker-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+            <!-- Injetado via JS com datas reais -->
+          </div>
+        </section>
+
+        <!-- 3. Escolha do Horário Disponível -->
+        <section class="bg-white rounded-2xl border border-borda p-6 shadow-sm">
+          <div class="flex items-center gap-2 pb-4 mb-4 border-b border-borda">
+            <span class="material-symbols-outlined text-terracota text-2xl">schedule</span>
+            <div>
+              <h2 class="font-serif text-xl text-cafe font-medium">Escolha o Horário de Início</h2>
+              <p class="text-xs text-[#52443f]">Os horários são ajustados automaticamente conforme a duração total dos seus serviços</p>
+            </div>
+          </div>
+
+          <!-- Período da Manhã -->
+          <div class="mb-4">
+            <span class="text-xs font-semibold tracking-wider uppercase text-salvia mb-2.5 block flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">light_mode</span> Manhã
+            </span>
+            <div id="morning-slots" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
+              <!-- Horários manhã -->
+            </div>
+          </div>
+
+          <!-- Período da Tarde -->
+          <div>
+            <span class="text-xs font-semibold tracking-wider uppercase text-salvia mb-2.5 block flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">wb_twilight</span> Tarde / Noite
+            </span>
+            <div id="afternoon-slots" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
+              <!-- Horários tarde -->
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Especialista de Preferência (Opcional) -->
+        <section class="bg-white rounded-2xl border border-borda p-6 shadow-sm">
+          <div class="flex items-center gap-2 pb-4 mb-4 border-b border-borda">
+            <span class="material-symbols-outlined text-terracota text-2xl">group</span>
+            <div>
+              <h2 class="font-serif text-xl text-cafe font-medium">Especialista de Preferência</h2>
+              <p class="text-xs text-[#52443f]">Você pode escolher quem realizará seu atendimento</p>
+            </div>
+          </div>
+
+          <div id="specialist-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="specialist-card border-2 border-terracota bg-aveia/30 rounded-xl p-3.5 cursor-pointer flex items-center gap-3 transition-all" data-specialist="Ruth Ribeiro (Terapeuta Capilar & Fundadora)">
+              <div class="w-10 h-10 rounded-full bg-terracota text-white flex items-center justify-center font-serif text-sm font-semibold">RR</div>
+              <div>
+                <p class="text-sm font-semibold text-cafe">Ruth Ribeiro</p>
+                <p class="text-xs text-[#52443f]">Terapeuta &amp; Cachos</p>
+              </div>
+            </div>
+            <div class="specialist-card border border-borda rounded-xl p-3.5 cursor-pointer flex items-center gap-3 hover:border-terracota transition-all" data-specialist="Dra. Carolina (Estética & Depilação)">
+              <div class="w-10 h-10 rounded-full bg-salvia text-white flex items-center justify-center font-serif text-sm font-semibold">DC</div>
+              <div>
+                <p class="text-sm font-semibold text-cafe">Dra. Carolina</p>
+                <p class="text-xs text-[#52443f]">Estética &amp; Ceras</p>
+              </div>
+            </div>
+            <div class="specialist-card border border-borda rounded-xl p-3.5 cursor-pointer flex items-center gap-3 hover:border-terracota transition-all" data-specialist="Primeira Especialista Disponível">
+              <div class="w-10 h-10 rounded-full bg-aveia text-terracota flex items-center justify-center font-serif text-sm font-semibold">
+                <span class="material-symbols-outlined text-lg">bolt</span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-cafe">Mais Rápido</p>
+                <p class="text-xs text-[#52443f]">Qualquer especialista</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+        <!-- Seção: Forma de Pagamento Preferida -->
+        <section class="bg-white rounded-2xl border border-borda p-6 shadow-sm">
+          <div class="flex items-center gap-2 pb-4 mb-4 border-b border-borda">
+            <span class="material-symbols-outlined text-terracota text-2xl">payments</span>
+            <div>
+              <h2 class="font-serif text-xl text-cafe font-medium">Forma de Pagamento Preferida</h2>
+              <p class="text-xs text-[#52443f]">O pagamento é realizado diretamente no salão no dia do atendimento</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="payment-methods-grid">
+            <div class="payment-method-card border-2 border-terracota bg-aveia/30 rounded-xl p-4 cursor-pointer flex items-center gap-3 transition-all" data-payment="PIX">
+              <div class="w-10 h-10 rounded-full bg-salvia text-white flex items-center justify-center font-bold text-sm">
+                <span class="material-symbols-outlined text-xl">qr_code_2</span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-cafe">PIX</p>
+                <p class="text-xs text-[#52443f]">Chave ou QR Code</p>
+              </div>
+            </div>
+
+            <div class="payment-method-card border border-borda rounded-xl p-4 cursor-pointer flex items-center gap-3 hover:border-terracota transition-all" data-payment="Cartão de Crédito ou Débito">
+              <div class="w-10 h-10 rounded-full bg-aveia text-terracota flex items-center justify-center font-bold text-sm">
+                <span class="material-symbols-outlined text-xl">credit_card</span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-cafe">Cartão</p>
+                <p class="text-xs text-[#52443f]">Crédito ou Débito</p>
+              </div>
+            </div>
+
+            <div class="payment-method-card border border-borda rounded-xl p-4 cursor-pointer flex items-center gap-3 hover:border-terracota transition-all" data-payment="Dinheiro">
+              <div class="w-10 h-10 rounded-full bg-aveia text-terracota flex items-center justify-center font-bold text-sm">
+                <span class="material-symbols-outlined text-xl">payments</span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-cafe">Dinheiro</p>
+                <p class="text-xs text-[#52443f]">Valor exato ou troco</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Dados de Contato e Observações -->
+        <section class="bg-white rounded-2xl border border-borda p-6 shadow-sm">
+          <div class="flex items-center gap-2 pb-4 mb-4 border-b border-borda">
+            <span class="material-symbols-outlined text-terracota text-2xl">badge</span>
+            <div>
+              <h2 class="font-serif text-xl text-cafe font-medium">Seus Dados de Contato</h2>
+              <p class="text-xs text-[#52443f]">Usado para registrar o seu agendamento e enviar lembretes</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="client-name" class="block text-xs font-semibold text-cafe uppercase tracking-wider mb-1.5">Seu Nome Completo *</label>
+              <input type="text" id="client-name" placeholder="Ex: Mariana Silva" class="w-full rounded-lg border-borda bg-creme/50 text-sm px-4 py-3 focus:border-terracota focus:ring-terracota">
+            </div>
+            <div>
+              <label for="client-phone" class="block text-xs font-semibold text-cafe uppercase tracking-wider mb-1.5">WhatsApp / Telefone *</label>
+              <input type="tel" id="client-phone" placeholder="Ex: (11) 98765-4321" class="w-full rounded-lg border-borda bg-creme/50 text-sm px-4 py-3 focus:border-terracota focus:ring-terracota">
+            </div>
+            <div class="sm:col-span-2">
+              <label for="client-notes" class="block text-xs font-semibold text-cafe uppercase tracking-wider mb-1.5">Observações ou Preferências (Opcional)</label>
+              <textarea id="client-notes" rows="2" placeholder="Ex: Meu cabelo tem curvatura 3C, tenho pele sensível a calor, etc." class="w-full rounded-lg border-borda bg-creme/50 text-sm px-4 py-3 focus:border-terracota focus:ring-terracota"></textarea>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Coluna Direita: Resumo Fixo (Sticky Summary) -->
+      <div class="lg:col-span-4 sticky top-28">
+        <div class="bg-white rounded-2xl border border-borda p-6 shadow-md">
+          <div class="flex items-center justify-between pb-4 mb-5 border-b border-borda">
+            <h3 class="font-serif text-xl text-terracota font-medium">Resumo do Agendamento</h3>
+            <span class="material-symbols-outlined text-salvia">verified</span>
+          </div>
+
+          <!-- Itens do Resumo -->
+          <div id="summary-items-list" class="flex flex-col gap-3 mb-5 max-h-56 overflow-y-auto pr-1">
+            <!-- Injetado via JS -->
+          </div>
+
+          <!-- Data e Hora Escolhida -->
+          <div class="p-3.5 rounded-xl bg-aveia/50 border border-borda/60 mb-5">
+            <div class="flex items-start gap-2.5 mb-2">
+              <span class="material-symbols-outlined text-terracota text-lg mt-0.5">calendar_month</span>
+              <div>
+                <p class="text-xs text-[#52443f]">Data Selecionada:</p>
+                <p id="summary-date" class="text-sm font-semibold text-cafe">Terça-feira, 08 de Setembro</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5 mb-2">
+              <span class="material-symbols-outlined text-terracota text-lg mt-0.5">alarm</span>
+              <div>
+                <p class="text-xs text-[#52443f]">Horário Marcado:</p>
+                <p id="summary-time" class="text-sm font-semibold text-cafe">10:00</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5 mb-2">
+              <span class="material-symbols-outlined text-terracota text-lg mt-0.5">person</span>
+              <div>
+                <p class="text-xs text-[#52443f]">Profissional:</p>
+                <p id="summary-specialist" class="text-xs font-semibold text-cafe">Ruth Ribeiro (Fundadora)</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-terracota text-lg mt-0.5">payments</span>
+              <div>
+                <p class="text-xs text-[#52443f]">Pagamento:</p>
+                <p id="summary-payment" class="text-xs font-semibold text-cafe">PIX (no atendimento)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duração e Totais -->
+          <div class="space-y-2.5 py-4 border-t border-b border-borda mb-6">
+            <div class="flex justify-between items-center text-sm text-[#52443f]">
+              <span>Tempo Estimado Total:</span>
+              <span id="summary-total-time" class="font-semibold text-cafe flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">schedule</span> 1h 45min
+              </span>
+            </div>
+            <div class="flex justify-between items-center text-sm text-[#52443f]">
+              <span>Subtotal dos Procedimentos:</span>
+              <span id="summary-subtotal" class="font-medium text-cafe">R$ 175</span>
+            </div>
+            <div class="flex justify-between items-center text-lg font-serif font-semibold text-terracota pt-2 border-t border-dashed border-borda">
+              <span>Valor Total:</span>
+              <span id="summary-total-price" class="text-2xl font-bold">R$ 175</span>
+            </div>
+            <p class="text-[11px] text-[#8c817b] text-right">Pagamento efetuado diretamente no salão (PIX, Cartão ou Dinheiro)</p>
+          </div>
+
+          <!-- Botão de Confirmação via WhatsApp -->
+          <button id="btn-confirm-booking" class="w-full btn-shine bg-[#25D366] hover:bg-[#1fb855] text-white font-medium py-4 px-6 rounded-xl flex items-center justify-center gap-2.5 transition-all shadow-md hover:scale-[1.02] active:scale-[0.98]">
+            <span class="material-symbols-outlined text-2xl">chat</span>
+            <span class="text-base font-semibold">Confirmar no WhatsApp</span>
+          </button>
+
+          <!-- Selos de Confiança -->
+          <div class="mt-6 flex flex-col gap-2.5 text-xs text-[#52443f]">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-salvia text-base">check_circle</span>
+              <span>Cancelamento ou remarcação sem taxa até 2h antes</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-salvia text-base">spa</span>
+              <span>Cosméticos botânicos puros e ceras de baixa fusão</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-salvia text-base">security</span>
+              <span>100% esterilizado e com materiais descartáveis</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden max-w-sm bg-cafe text-white px-5 py-3.5 rounded-xl shadow-xl flex items-center gap-3 border border-salvia">
+    <span class="material-symbols-outlined text-salvia-light">info</span>
+    <span id="toast-message" class="text-sm font-medium">Ação realizada com sucesso</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w-full bg-[#f0ede9] border-t border-borda mt-20">
+    <div class="max-w-[1280px] mx-auto px-6 md:px-12 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-3">
+            <img alt="Logo" class="h-7 w-auto" src="assets/images/logo_atelier.png">
+            <span class="font-serif text-lg text-terracota font-medium">Espaço Ruth Ribeiro</span>
+          </div>
+          <p class="text-sm text-[#52443f] max-w-md">
+            Atelier Botânico de terapias capilares para cachos, depilação acolhedora com ceras nobres e estética facial integrativa.
+          </p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold tracking-wider uppercase text-terracota mb-3">Navegação</p>
+          <ul class="space-y-2 text-sm text-[#52443f]">
+            <li><a href="index.html" class="hover:text-terracota transition-colors">Início</a></li>
+            <li><a href="sobre.html" class="hover:text-terracota transition-colors">Quem Somos</a></li>
+            <li><a href="servicos.html" class="hover:text-terracota transition-colors">Serviços &amp; Preços</a></li>
+            <li><a href="carrinho.html" class="hover:text-terracota transition-colors font-medium text-terracota">Meu Carrinho</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold tracking-wider uppercase text-terracota mb-3">Atendimento</p>
+          <p class="text-sm text-[#52443f]">Terça a Sábado: 08:30 às 19:00</p>
+          <p class="text-sm text-[#52443f] mt-1">Av. das Palmeiras, 1420 - São Paulo, SP</p>
+          <p class="text-sm text-salvia font-medium mt-2">WhatsApp: (11) 98765-4321</p>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-borda/60 text-center text-xs text-[#8c817b]">
+        © 2026 Espaço Ruth Ribeiro — Atelier Botânico &amp; Cachos. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Lógica do Carrinho & Agendamento -->
+  <script>
+    // Lista padrão inicial de procedimentos caso o carrinho esteja vazio
+    const DEFAULT_INITIAL_CART = [
+      {
+        id: "corte-seco-cachos",
+        name: "Corte a Seco Estruturado para Cachos",
+        category: "Cabelos & Cachos",
+        duration: 60,
+        price: 130
+      },
+      {
+        id: "axilas-argiloterapia",
+        name: "Axilas com Argiloterapia Calmante Pós",
+        category: "Depilação Nobre",
+        duration: 30,
+        price: 45
+      }
+    ];
+
+    const STORAGE_KEY = "ruth_ribeiro_cart";
+
+    // Obter carrinho do localStorage
+    function getCart() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (!stored) {
+          // Salva itens iniciais na primeira visita para a tela não abrir vazia
+          saveCart(DEFAULT_INITIAL_CART);
+          return DEFAULT_INITIAL_CART;
+        }
+        return JSON.parse(stored);
+      } catch (e) {
+        return DEFAULT_INITIAL_CART;
+      }
+    }
+
+    // Salvar carrinho
+    function saveCart(cart) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+      updateGlobalBadge(cart.length);
+    }
+
+    // Atualizar badge no header
+    function updateGlobalBadge(count) {
+      const badge = document.getElementById("global-cart-badge");
+      if (badge) badge.textContent = count;
+    }
+
+    // Toast feedback
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      const toastMsg = document.getElementById("toast-message");
+      if (toast && toastMsg) {
+        toastMsg.textContent = msg;
+        toast.classList.remove("hidden");
+        toast.classList.add("toast-anim");
+        setTimeout(() => {
+          toast.classList.add("hidden");
+          toast.classList.remove("toast-anim");
+        }, 2800);
+      }
+    }
+
+    // Dados de Data e Hora Selecionados
+    let selectedDate = null;
+    let selectedTime = "10:00";
+    let selectedSpecialist = "Ruth Ribeiro (Terapeuta Capilar & Fundadora)";
+    let selectedPayment = "PIX";
+
+    function setupPaymentMethods() {
+      const cards = document.querySelectorAll('.payment-method-card');
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          cards.forEach(c => {
+            c.classList.remove('border-2', 'border-terracota', 'bg-aveia/30');
+            c.classList.add('border', 'border-borda');
+          });
+          card.classList.remove('border', 'border-borda');
+          card.classList.add('border-2', 'border-terracota', 'bg-aveia/30');
+          selectedPayment = card.getAttribute('data-payment') || 'PIX';
+          const sumPay = document.getElementById('summary-payment');
+          if (sumPay) sumPay.textContent = selectedPayment + ' (no atendimento)';
+        });
+      });
+    }
+
+    // Gerador de Dias Úteis Próximos
+    function renderDateSlots() {
+      const container = document.getElementById("date-picker-grid");
+      if (!container) return;
+      container.innerHTML = "";
+
+      const daysOfWeek = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+      const months = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+
+      const today = new Date();
+      let added = 0;
+      let cur = new Date(today);
+
+      while (added < 6) {
+        cur.setDate(cur.getDate() + 1);
+        const dayIdx = cur.getDay();
+        // Abrimos de Terça (2) a Sábado (6)
+        if (dayIdx >= 2 && dayIdx <= 6) {
+          const dayName = daysOfWeek[dayIdx];
+          const dayNum = String(cur.getDate()).padStart(2, '0');
+          const monthName = months[cur.getMonth()];
+          const fullLabel = `${dayName}, ${dayNum} de ${monthName}`;
+          
+          if (!selectedDate && added === 0) {
+            selectedDate = fullLabel;
+          }
+
+          const isSelected = selectedDate === fullLabel;
+
+          const pill = document.createElement("button");
+          pill.className = `date-slot-btn flex flex-col items-center justify-center p-3 rounded-xl border transition-all ${
+            isSelected 
+              ? "bg-terracota text-white border-terracota shadow-md scale-105" 
+              : "border-borda bg-aveia/40 text-cafe hover:border-terracota"
+          }`;
+          pill.innerHTML = `
+            <span class="text-xs font-medium uppercase opacity-80">${dayName}</span>
+            <span class="text-xl font-serif font-bold my-0.5">${dayNum}</span>
+            <span class="text-[11px] opacity-75">${monthName}</span>
+          `;
+
+          pill.addEventListener("click", () => {
+            document.querySelectorAll(".date-slot-btn").forEach(b => {
+              b.className = "date-slot-btn flex flex-col items-center justify-center p-3 rounded-xl border border-borda bg-aveia/40 text-cafe hover:border-terracota transition-all";
+            });
+            pill.className = "date-slot-btn flex flex-col items-center justify-center p-3 rounded-xl border bg-terracota text-white border-terracota shadow-md scale-105 transition-all";
+            selectedDate = fullLabel;
+            document.getElementById("summary-date").textContent = selectedDate;
+          });
+
+          container.appendChild(pill);
+          added++;
+        }
+      }
+
+      document.getElementById("summary-date").textContent = selectedDate || "A definir";
+    }
+
+    // Gerador de Horários
+    function renderTimeSlots() {
+      const morningTimes = ["09:00", "09:45", "10:30", "11:15"];
+      const afternoonTimes = ["13:30", "14:15", "15:00", "16:00", "17:00", "18:00"];
+
+      function makeSlot(time, containerId) {
+        const c = document.getElementById(containerId);
+        if (!c) return;
+        const btn = document.createElement("button");
+        const isSelected = selectedTime === time;
+        btn.className = `time-slot-btn text-xs font-semibold py-2.5 px-2 rounded-lg border transition-all ${
+          isSelected 
+            ? "bg-terracota text-white border-terracota shadow-sm" 
+            : "border-borda bg-creme text-cafe hover:border-terracota hover:bg-aveia/30"
+        }`;
+        btn.textContent = time;
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".time-slot-btn").forEach(b => {
+            b.className = "time-slot-btn text-xs font-semibold py-2.5 px-2 rounded-lg border border-borda bg-creme text-cafe hover:border-terracota hover:bg-aveia/30 transition-all";
+          });
+          btn.className = "time-slot-btn text-xs font-semibold py-2.5 px-2 rounded-lg border bg-terracota text-white border-terracota shadow-sm transition-all";
+          selectedTime = time;
+          document.getElementById("summary-time").textContent = selectedTime;
+        });
+        c.appendChild(btn);
+      }
+
+      const m = document.getElementById("morning-slots");
+      if (m) m.innerHTML = "";
+      morningTimes.forEach(t => makeSlot(t, "morning-slots"));
+
+      const a = document.getElementById("afternoon-slots");
+      if (a) a.innerHTML = "";
+      afternoonTimes.forEach(t => makeSlot(t, "afternoon-slots"));
+
+      document.getElementById("summary-time").textContent = selectedTime;
+    }
+
+    // Configurar Especialistas
+    function setupSpecialists() {
+      const cards = document.querySelectorAll(".specialist-card");
+      cards.forEach(card => {
+        card.addEventListener("click", () => {
+          cards.forEach(c => {
+            c.classList.remove("border-2", "border-terracota", "bg-aveia/30");
+            c.classList.add("border", "border-borda");
+          });
+          card.classList.remove("border", "border-borda");
+          card.classList.add("border-2", "border-terracota", "bg-aveia/30");
+          selectedSpecialist = card.getAttribute("data-specialist") || "Qualquer especialista";
+          document.getElementById("summary-specialist").textContent = selectedSpecialist;
+        });
+      });
+    }
+
+    // Renderizar Carrinho
+    function renderCart() {
+      const cart = getCart();
+      const container = document.getElementById("cart-items-container");
+      const emptyState = document.getElementById("cart-empty-state");
+      const actionsBottom = document.getElementById("cart-actions-bottom");
+      const summaryList = document.getElementById("summary-items-list");
+      const itemCountBadge = document.getElementById("cart-item-count");
+      
+      updateGlobalBadge(cart.length);
+
+      if (!cart || cart.length === 0) {
+        if (container) container.innerHTML = "";
+        if (emptyState) emptyState.classList.remove("hidden");
+        if (emptyState) emptyState.classList.add("flex");
+        if (actionsBottom) actionsBottom.classList.add("hidden");
+        if (itemCountBadge) itemCountBadge.textContent = "0 serviços";
+        
+        // Atualiza Resumo
+        if (summaryList) summaryList.innerHTML = '<p class="text-xs text-[#8c817b] italic">Nenhum serviço no momento.</p>';
+        document.getElementById("summary-total-time").textContent = "0 min";
+        document.getElementById("summary-subtotal").textContent = "R$ 0";
+        document.getElementById("summary-total-price").textContent = "R$ 0";
+        return;
+      }
+
+      if (emptyState) emptyState.classList.add("hidden");
+      if (emptyState) emptyState.classList.remove("flex");
+      if (actionsBottom) actionsBottom.classList.remove("hidden");
+      if (itemCountBadge) itemCountBadge.textContent = `${cart.length} ${cart.length === 1 ? 'serviço' : 'serviços'}`;
+
+      // Renderiza na lista da esquerda
+      if (container) {
+        container.innerHTML = "";
+        cart.forEach((item, index) => {
+          const card = document.createElement("div");
+          card.className = "card-item-enter bg-creme/50 border border-borda/80 rounded-xl p-4 flex items-center justify-between gap-4 hover:border-terracota/50 transition-all";
+          card.innerHTML = `
+            <div class="flex items-center gap-3.5 flex-1 min-w-0">
+              <div class="w-10 h-10 rounded-lg bg-aveia text-terracota flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-xl">content_cut</span>
+              </div>
+              <div class="truncate">
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-salvia/15 text-salvia">
+                    ${item.category || 'Atelier'}
+                  </span>
+                </div>
+                <h4 class="font-serif text-sm font-semibold text-cafe truncate mt-0.5">${item.name}</h4>
+                <p class="text-xs text-[#52443f] flex items-center gap-1 mt-0.5">
+                  <span class="material-symbols-outlined text-[14px]">schedule</span>
+                  ${item.duration} min
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 shrink-0">
+              <span class="font-serif text-base font-bold text-terracota">
+                R$ ${item.price}
+              </span>
+              <!-- BOTÃO DE REMOÇÃO DIRETA -->
+              <button class="btn-remove-service w-9 h-9 rounded-lg border border-red-200 text-red-600 hover:bg-red-50 flex items-center justify-center transition-all hover:scale-110 active:scale-95" 
+                      data-index="${index}" 
+                      title="Remover este procedimento do carrinho">
+                <span class="material-symbols-outlined text-lg">delete</span>
+              </button>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+
+        // Event listeners para remover item
+        container.querySelectorAll(".btn-remove-service").forEach(btn => {
+          btn.addEventListener("click", (e) => {
+            const idx = parseInt(btn.getAttribute("data-index"));
+            removeService(idx);
+          });
+        });
+      }
+
+      // Renderiza no Resumo lateral
+      if (summaryList) {
+        summaryList.innerHTML = "";
+        cart.forEach(item => {
+          const row = document.createElement("div");
+          row.className = "flex justify-between items-center text-xs text-cafe";
+          row.innerHTML = `
+            <span class="truncate pr-2 font-medium">• ${item.name}</span>
+            <span class="font-bold shrink-0 text-terracota">R$ ${item.price}</span>
+          `;
+          summaryList.appendChild(row);
+        });
+      }
+
+      // Cálculo Total de Preço e Duração
+      const totalPrice = cart.reduce((sum, item) => sum + (Number(item.price) || 0), 0);
+      const totalMinutes = cart.reduce((sum, item) => sum + (Number(item.duration) || 0), 0);
+
+      // Formatação de Tempo (ex: 90min -> 1h 30min)
+      const hours = Math.floor(totalMinutes / 60);
+      const remainingMinutes = totalMinutes % 60;
+      let timeFormatted = "";
+      if (hours > 0) {
+        timeFormatted = `${hours}h ${remainingMinutes > 0 ? remainingMinutes + 'min' : ''}`;
+      } else {
+        timeFormatted = `${remainingMinutes}min`;
+      }
+
+      document.getElementById("summary-total-time").innerHTML = `
+        <span class="material-symbols-outlined text-sm">schedule</span> ${timeFormatted}
+      `;
+      document.getElementById("summary-subtotal").textContent = `R$ ${totalPrice}`;
+      document.getElementById("summary-total-price").textContent = `R$ ${totalPrice}`;
+    }
+
+    // Função para Remover Serviço
+    function removeService(index) {
+      const cart = getCart();
+      if (index >= 0 && index < cart.length) {
+        const removed = cart.splice(index, 1);
+        saveCart(cart);
+        renderCart();
+        showToast(`"${removed[0]?.name || 'Serviço'}" foi removido do carrinho.`);
+      }
+    }
+
+    // Inicialização
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCart();
+      renderDateSlots();
+      renderTimeSlots();
+      setupSpecialists();
+      setupPaymentMethods();
+
+      // Botão Limpar Tudo
+      const btnClear = document.getElementById("btn-clear-cart");
+      if (btnClear) {
+        btnClear.addEventListener("click", () => {
+          if (confirm("Deseja realmente remover todos os procedimentos do seu carrinho?")) {
+            saveCart([]);
+            renderCart();
+            showToast("O carrinho foi esvaziado.");
+          }
+        });
+      }
+
+      // Confirmação no WhatsApp
+      const btnConfirm = document.getElementById("btn-confirm-booking");
+      if (btnConfirm) {
+        btnConfirm.addEventListener("click", () => {
+          const cart = getCart();
+          if (cart.length === 0) {
+            alert("Seu carrinho está vazio! Por favor, adicione pelo menos um procedimento antes de agendar.");
+            return;
+          }
+
+          const clientName = document.getElementById("client-name")?.value.trim();
+          const clientPhone = document.getElementById("client-phone")?.value.trim();
+          const clientNotes = document.getElementById("client-notes")?.value.trim();
+
+          if (!clientName) {
+            alert("Por favor, preencha o seu nome completo para prosseguir.");
+            document.getElementById("client-name")?.focus();
+            return;
+          }
+
+          const totalPrice = cart.reduce((sum, item) => sum + (Number(item.price) || 0), 0);
+          const totalMinutes = cart.reduce((sum, item) => sum + (Number(item.duration) || 0), 0);
+          const hours = Math.floor(totalMinutes / 60);
+          const remainingMinutes = totalMinutes % 60;
+          const timeFormatted = hours > 0 ? `${hours}h ${remainingMinutes > 0 ? remainingMinutes + 'min' : ''}` : `${remainingMinutes}min`;
+
+          let serviceListText = "";
+          cart.forEach(item => {
+            serviceListText += `• ${item.name} (${item.duration} min) — R$ ${item.price}\\n`;
+          });
+
+          let message = `🌿 *Solicitação de Agendamento — Espaço Ruth Ribeiro*\\n\\n`;
+          message += `👤 *Cliente:* ${clientName}\\n`;
+          if (clientPhone) message += `📱 *Telefone/WhatsApp:* ${clientPhone}\\n`;
+          message += `📅 *Data Desejada:* ${selectedDate || 'A combinar'}\\n`;
+          message += `⏰ *Horário:* ${selectedTime}\\n`;
+          message += `👩‍⚕️ *Especialista:* ${selectedSpecialist}\\n\\n`;
+          message += `✂️ *Procedimentos Selecionados:*\\n${serviceListText}\\n`;
+          message += `⏱️ *Tempo Estimado:* ${timeFormatted}\\n`;
+          message += `💰 *Valor Previsto:* R$ ${totalPrice}\\n`;
+          message += `💳 *Forma de Pagamento:* ${selectedPayment}\\n`;
+          if (clientNotes) message += `📝 *Observações:* ${clientNotes}\\n`;
+          message += `\\n_Aguardo a confirmação do horário pela recepção!_`;
+
+          const encodedUrl = `https://wa.me/5511987654321?text=${encodeURIComponent(message.replace(/\\n/g, '\n'))}`;
+          window.open(encodedUrl, "_blank");
+        });
+      }
+    });
+  </script>
+
+<script>
+  (function() {
+    function updateHeaderBadge() {
+      try {
+        const stored = localStorage.getItem('ruth_ribeiro_cart');
+        const cart = stored ? JSON.parse(stored) : [];
+        document.querySelectorAll('.global-cart-badge').forEach(b => {
+          b.textContent = cart.length;
+        });
+      } catch (e) {}
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateHeaderBadge);
+    } else {
+      updateHeaderBadge();
+    }
+  })();
+</script>
+
+</body>
+</html>

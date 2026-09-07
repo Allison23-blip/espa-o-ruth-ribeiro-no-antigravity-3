@@ -1,0 +1,10 @@
+{
+  "name": "espaco-ruth-ribeiro-estetica-beleza",
+  "version": "1.0.0",
+  "description": "Espaço Estética e Beleza Multi-Serviços / Espaço Ruth Ribeiro - Atelier Botânico & Cachos importado do Stitch MCP",
+  "scripts": {
+    "dev": "npx -y serve . -l 3000",
+    "start": "npx -y serve . -l 3000",
+    "preview": "npx -y serve ."
+  }
+}

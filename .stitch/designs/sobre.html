@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quem Somos | Atelier Botânico &amp; Cachos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "on-error-container": "#93000a",
+              "on-primary-fixed": "#351004",
+              "tertiary-fixed": "#ffdbcf",
+              "primary": "#7f4a3a",
+              "on-tertiary-fixed": "#331205",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e5e2dd",
+              "on-secondary": "#ffffff",
+              "surface-variant": "#e5e2dd",
+              "error-container": "#ffdad6",
+              "surface-container": "#f0ede9",
+              "secondary-container": "#d5e4cc",
+              "primary-fixed": "#ffdbd0",
+              "inverse-surface": "#31302d",
+              "on-secondary-fixed-variant": "#3d4a39",
+              "on-primary-container": "#fff3f0",
+              "tertiary-fixed-dim": "#f7b8a2",
+              "secondary-fixed-dim": "#bccbb4",
+              "secondary-fixed": "#d8e7cf",
+              "surface-tint": "#86503f",
+              "on-error": "#ffffff",
+              "on-secondary-container": "#586753",
+              "surface-dim": "#dcdad5",
+              "on-primary-fixed-variant": "#6a3a2a",
+              "surface-bright": "#fcf9f4",
+              "on-tertiary-fixed-variant": "#673b2b",
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#9b6250",
+              "inverse-primary": "#fcb6a0",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "background": "#fcf9f4",
+              "primary-fixed-dim": "#fcb6a0",
+              "inverse-on-surface": "#f3f0eb",
+              "on-surface": "#1c1c19",
+              "outline-variant": "#d7c2bc",
+              "tertiary": "#7b4c3b",
+              "surface": "#fcf9f4",
+              "surface-container-high": "#ebe8e3",
+              "on-background": "#1c1c19",
+              "on-secondary-fixed": "#121f10",
+              "surface-container-low": "#f6f3ee",
+              "outline": "#84736e",
+              "on-tertiary-container": "#fff3f0",
+              "secondary": "#54624f",
+              "on-surface-variant": "#52443f",
+              "tertiary-container": "#976452"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "space-xs": "0.5rem",
+              "space-lg": "1.5rem",
+              "margin-mobile": "1.25rem",
+              "gutter": "1.5rem",
+              "space-sm": "0.75rem",
+              "space-4xl": "6rem",
+              "space-md": "1rem",
+              "space-2xs": "0.25rem",
+              "space-3xl": "4.5rem",
+              "margin-desktop": "3rem",
+              "space-xl": "2rem",
+              "space-2xl": "3rem"
+            },
+            "fontFamily": {
+              "body-lg": [
+                "Plus Jakarta Sans"
+              ],
+              "label-sm": [
+                "Plus Jakarta Sans"
+              ],
+              "display-hero-mobile": [
+                "Playfair Display"
+              ],
+              "headline-sm": [
+                "Playfair Display"
+              ],
+              "title-sm": [
+                "Plus Jakarta Sans"
+              ],
+              "body-md": [
+                "Plus Jakarta Sans"
+              ],
+              "headline-lg": [
+                "Playfair Display"
+              ],
+              "body-sm": [
+                "Plus Jakarta Sans"
+              ],
+              "headline-lg-mobile": [
+                "Playfair Display"
+              ],
+              "title-md": [
+                "Plus Jakarta Sans"
+              ],
+              "display-hero": [
+                "Playfair Display"
+              ],
+              "label-md": [
+                "Plus Jakarta Sans"
+              ],
+              "headline-md": [
+                "Playfair Display"
+              ]
+            },
+            "fontSize": {
+              "body-lg": [
+                "18px",
+                {
+                  "lineHeight": "28px",
+                  "fontWeight": "400"
+                }
+              ],
+              "label-sm": [
+                "11px",
+                {
+                  "lineHeight": "16px",
+                  "letterSpacing": "0.06em",
+                  "fontWeight": "600"
+                }
+              ],
+              "display-hero-mobile": [
+                "36px",
+                {
+                  "lineHeight": "44px",
+                  "letterSpacing": "-0.01em",
+                  "fontWeight": "600"
+                }
+              ],
+              "headline-sm": [
+                "22px",
+                {
+                  "lineHeight": "30px",
+                  "fontWeight": "500"
+                }
+              ],
+              "title-sm": [
+                "16px",
+                {
+                  "lineHeight": "24px",
+                  "fontWeight": "600"
+                }
+              ],
+              "body-md": [
+                "15px",
+                {
+                  "lineHeight": "24px",
+                  "fontWeight": "400"
+                }
+              ],
+              "headline-lg": [
+                "40px",
+                {
+                  "lineHeight": "48px",
+                  "letterSpacing": "-0.015em",
+                  "fontWeight": "600"
+                }
+              ],
+              "body-sm": [
+                "13px",
+                {
+                  "lineHeight": "20px",
+                  "fontWeight": "400"
+                }
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                {
+                  "lineHeight": "36px",
+                  "fontWeight": "600"
+                }
+              ],
+              "title-md": [
+                "18px",
+                {
+                  "lineHeight": "26px",
+                  "fontWeight": "600"
+                }
+              ],
+              "display-hero": [
+                "56px",
+                {
+                  "lineHeight": "64px",
+                  "letterSpacing": "-0.02em",
+                  "fontWeight": "600"
+                }
+              ],
+              "label-md": [
+                "13px",
+                {
+                  "lineHeight": "18px",
+                  "letterSpacing": "0.04em",
+                  "fontWeight": "600"
+                }
+              ],
+              "headline-md": [
+                "28px",
+                {
+                  "lineHeight": "36px",
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- Header: TopNavBar -->
+<header class="sticky top-0 z-50 bg-surface dark:bg-surface-container-lowest shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-space-md max-w-7xl mx-auto">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim">
+                Atelier Botânico &amp; Cachos
+            </div>
+<nav class="hidden md:flex items-center gap-space-lg">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-secondary-container/10 transition-all duration-300 ease-in-out px-space-xs py-space-2xs rounded" href="#">Início</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary transition-all duration-300 ease-in-out px-space-xs py-space-2xs" href="#">Sobre</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-secondary-container/10 transition-all duration-300 ease-in-out px-space-xs py-space-2xs rounded" href="#">Cachos</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-secondary-container/10 transition-all duration-300 ease-in-out px-space-xs py-space-2xs rounded" href="#">Tratamentos</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-secondary-container/10 transition-all duration-300 ease-in-out px-space-xs py-space-2xs rounded" href="#">Especialistas</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-space-md py-space-sm rounded-lg font-title-sm hover:bg-primary-container/90 transition-colors hidden md:block">
+                Agendar
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main>
+<!-- Hero Section -->
+<section class="py-space-3xl md:py-space-4xl px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-space-2xl md:gap-gutter">
+<div class="md:w-5/12 space-y-space-md text-center md:text-left">
+<h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-primary mb-space-sm leading-tight">Onde o afeto encontra a ciência botânica para celebrar sua essência</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto md:mx-0">
+                    Fundado por Ruth Ribeiro, o Atelier nasceu do desejo de proporcionar um refúgio acolhedor, livre de preconceitos e com excelência em curvaturas e estética integrativa.
+                </p>
+<div class="pt-space-md">
+<button class="bg-primary-container text-on-primary-container px-space-xl py-space-md rounded-lg font-title-sm shadow-sm hover:translate-y-[-2px] transition-transform">
+                        Agendar Meu Horário
+                    </button>
+</div>
+</div>
+<div class="md:w-7/12 relative">
+<div class="aspect-[4/5] rounded-[2rem] overflow-hidden rounded-tl-[8rem] rounded-br-[8rem] border border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(44,35,32,0.07)]">
+<img class="w-full h-full object-cover" data-alt="A high-end editorial portrait of a woman with beautiful, voluminous naturally curly hair in a warm, minimalist salon setting. Soft, natural sunlight illuminates her face, highlighting natural skin textures and a serene expression. The background features earthy terracotta and beige tones, organic shapes, and a few blurred botanical elements. The mood is welcoming, luxurious, and deeply focused on holistic well-being." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0ZrNAUsKqiAfPMZAgGZpEoBfNkxyHoqNvhK_3ZLRz8e01FIfQROhYVM6ZlqRtDtq9DHcxBVm8nftbbsEgnCKdIt6ihUJGaj13DMC62AnAQ4L5MwTktYM7NYgBXX5oQ0BlLzZYY1Licz38JyoCJ4lVCQ5L1Tr8vGf6-nwGCqStqfjQM0cXCMBTpl4m18P8NKZT7WR5w1NptMK9EF2UeA_MBLTcLdwk5qW-93oMUAz8ZL2_N-Nbw5cZVbmF9YU1pQMTGVe6HQkqpPA"/>
+</div>
+</div>
+</section>
+<!-- A História da Ruth Ribeiro -->
+<section class="py-space-3xl md:py-space-4xl px-margin-mobile md:px-margin-desktop bg-surface-container-lowest border-y border-outline-variant/30">
+<div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-space-2xl md:gap-gutter">
+<div class="md:w-1/2 relative">
+<div class="aspect-square rounded-full overflow-hidden border border-outline-variant/30 max-w-[400px] mx-auto">
+<img class="w-full h-full object-cover" data-alt="A warm, approachable portrait of Ruth Ribeiro, a trichologist and curly hair specialist, standing in her botanical salon. She is smiling gently, wearing a sophisticated minimalist uniform in earthy tones. The background is slightly out of focus, showing wooden textures, soft lighting, and hints of green plants, conveying a sense of professional expertise blended with holistic care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeYqQwibUpu4Hrv9M8u1UUm-I2jT5R50hikwBSBgTUN1bOSUizartclRVwXeds1QM2w5ekCVQHrPQXEOFZyncjWvkdtrwme8-UqF2st0DA1phY6qKN-C7PIb2Now72T-f4cPkGb4jsoO5DamN8uRwNrRLoxNrn23fvodI6UsMawLOz_NsjaQdG2dJNDAs3KSW00CaeG3598D9TgYEzzrzwQ5QauNnpbLD_TqpYnkNLysBdASvcnJkcx_SJbZAK75HZwBMY6_1-3q8"/>
+</div>
+</div>
+<div class="md:w-1/2 space-y-space-md">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">A História de Ruth Ribeiro</h2>
+<div class="space-y-space-sm font-body-lg text-body-lg text-on-surface-variant">
+<p>
+                            A jornada do Atelier Botânico &amp; Cachos começou com uma busca pessoal por aceitação e saúde. Ruth Ribeiro, tricologista e especialista em cosmetologia natural, transformou sua própria transição capilar em uma missão de vida.
+                        </p>
+<p>
+                            Formada nas mais avançadas técnicas de tricologia e desenvolvimento de fórmulas cosméticas limpas, Ruth percebeu uma lacuna no mercado da beleza: a falta de espaços que unissem conhecimento científico rigoroso com um acolhimento genuíno e livre de traumas para cabelos com curvatura.
+                        </p>
+<blockquote class="my-space-xl p-space-lg border-l-4 border-tertiary-container bg-surface-container-low rounded-r-lg italic">
+<span class="text-headline-md font-headline-md text-tertiary block mb-space-sm">"Cabelo com curvatura não precisa ser domado, precisa ser compreendido e nutrido."</span>
+</blockquote>
+<p>
+                            Hoje, o Espaço Ruth Ribeiro é mais do que um salão; é um santuário de bem-estar onde cada tratamento é personalizado, utilizando apenas ingredientes botânicos de alta performance que respeitam a integridade dos fios e da pele.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Nossos 4 Pilares Inegociáveis -->
+<section class="py-space-3xl md:py-space-4xl px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="text-center mb-space-2xl">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-space-xs">Nossos 4 Pilares Inegociáveis</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A base do nosso cuidado e da nossa excelência.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Pillar 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-space-lg shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-space-md">
+<span class="material-symbols-outlined" data-icon="cut" data-weight="fill" style="font-variation-settings: 'FILL' 1;">cut</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-xs">Maestria em Curvaturas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Corte a seco respeitando a textura natural, garantindo caimento perfeito e volume desejado para cada tipo de cacho.</p>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-space-lg shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-space-md">
+<span class="material-symbols-outlined" data-icon="spa" data-weight="fill" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-xs">Cosmetologia Limpa</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fórmulas botânicas exclusivas. Zero sulfatos agressivos, parabenos e silicones insolúveis. Saúde pura para fios e couro cabeludo.</p>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-space-lg shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-space-md">
+<span class="material-symbols-outlined" data-icon="self_improvement" data-weight="fill" style="font-variation-settings: 'FILL' 1;">self_improvement</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-xs">Cuidado Humanizado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Depilação com ceras nobres de baixa temperatura e anestésico natural. Um processo focado no conforto e minimização da dor.</p>
+</div>
+<!-- Pillar 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-space-lg shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-space-md">
+<span class="material-symbols-outlined" data-icon="diversity_3" data-weight="fill" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-xs">Acolhimento Total</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Um ambiente intergeracional preparado para oferecer cuidado dedicado e seguro para crianças, mulheres e homens.</p>
+</div>
+</div>
+</section>
+<!-- Tour Visual pelo Espaço -->
+<section class="py-space-3xl md:py-space-4xl px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-space-2xl">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-space-xs">Tour Visual pelo Espaço</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Conheça cada detalhe do nosso refúgio de bem-estar.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Photo 1 -->
+<div class="relative group rounded-xl overflow-hidden aspect-square border border-outline-variant/30">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A tranquil private waxing room in a high-end salon. Soft, diffused lighting creates a calm atmosphere. A comfortable treatment bed is visible, adorned with plush, neutral-toned towels. Earthy aesthetic with a hint of terracotta on the walls and minimalist botanical decor, emphasizing comfort and privacy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG2biNqr5RUgBoqpCb4Z3ok2jHIclGVVAYpxrAkWY6xvyeG7EkiUwmqYN90dbx9GPNN4V1IEMl54aPFYsone6wJuuXijcp9Yezmu29J2IK1f46TT8LT-ALn4ymyYyrBJkqh1E-57dweuld9dgRDZFCjxy2PHw3whlA6AVpPLSlnpwPQZTsx4wPwf_49wNN0_HIcF9acm9x9XNsUdNEAU-O2QX4nPssHQNs5TTyKF-C1eakIGmAAI0kzBmKA_jK29CXFsShfRLmiX4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-space-md">
+<span class="text-on-secondary font-title-sm">Salas Privativas de Depilação Térmica</span>
+</div>
+</div>
+<!-- Photo 2 -->
+<div class="relative group rounded-xl overflow-hidden aspect-square border border-outline-variant/30">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A sensory hair-washing station featuring elegant ceramic basins and warm wooden accents. The area is softly lit, with small essential oil diffusers emitting a gentle mist. Lush green plants are integrated into the design, creating a spa-like aromatherapy experience tailored for relaxation and botanical care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGEySn_JP_Jn_ejoboifBaVCw_iCs355qKiyKEgnmd98m-KiVlhEZT7KV3Uazb9f80Nbbrk93Y6wFxqNh5Q4k0HgubkImaTdr7Kh2g4fqhL3iCm2WxN3IFpp5o9pqy06YqVRJqyOK8xOlhhPKYAwFJUuVYh4W-v5-wXNoEPFHmI0ytKlH8rcDTQ3iAtxVapVlkEIXVfqMZXyxBSA10EZadJrMHVOsAVSf9Bx3SEKQU7gqKJO3nu6uaSy-1MQX2KLO1g-3HBIboouQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-space-md">
+<span class="text-on-secondary font-title-sm">Estações de Lavatório Sensorial com Aromaterapia</span>
+</div>
+</div>
+<!-- Photo 3 -->
+<div class="relative group rounded-xl overflow-hidden aspect-square border border-outline-variant/30">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A cozy and beautifully designed play area for children within a salon. It features safe, rounded wooden toys, soft pastel cushions, and low shelving with inclusive children's books. The space is inviting, clean, and styled in harmony with the rest of the warm, earthy aesthetic of the botanical atelier." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn1ZnBV4OxerF2aII5kqFE9W5xcj8gMRtz7EjtvN0ajc-7kbW3wFs85j-CaY2-FTQsDmkDPTXfd7APBpGX7NG0hrC1_t-leYRp8pCuaokBkEcISxOT_Er7sz0I6cRvC8PRn4E32LT4ZkMzWiht4z1tqD6aaWfMcx-DT267bkN3Uv6VjVIO1cL1NlydrYawRNa4Jt5E3jVtopq330aUgJfnpH220z5nP5KypTXn4p9ZvLrhLOhx5R5X2XcGTdkRrrhMabLBFzxjPRU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-space-md">
+<span class="text-on-secondary font-title-sm">Cantinho Kids Lúdico</span>
+</div>
+</div>
+<!-- Photo 4 -->
+<div class="relative group rounded-xl overflow-hidden aspect-square border border-outline-variant/30 md:col-span-2 lg:col-span-3 lg:aspect-[3/1]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A stylish botanical tea bar in a salon waiting area. It features a beautifully crafted wooden counter displaying an array of organic herbal teas in glass jars. Comfortable lounge seating with terracotta and sage green cushions surrounds small coffee tables. The space feels like a luxurious, calm café designed for relaxation before a treatment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm7cWfeK4NkvR3dC2VGCnbr8XjmlF4_jR6naAhGC_y0oDUqmEOuWr-MOaicPep4cYhTCkEnAIqXcPGkqIysQruWuiqtua5nfmMCgKquUBAxGHTf9acx7Hl6m7j1iTnjCOv2Vvo0ZqFJFTnZMAzur8aNkmijAaS8SKEkOp6TDPg75q8Unu74479NrAFzOs8O1sxvLBfpTHPye1hI63pkTeaXIbXY0uhCNbeAqSYwupvrh4ApoIxKqCkPq9tRrY4f-1d_b2RnoMFc04"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-space-md">
+<span class="text-on-secondary font-title-sm text-lg">Bar Botânico de Tisanas</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-highest border-t border-outline-variant/30 text-on-surface-variant py-space-3xl px-margin-mobile md:px-margin-desktop w-full flex flex-col md:flex-row justify-between items-center gap-space-lg transition-opacity duration-200">
+<div class="text-center md:text-left space-y-space-sm">
+<div class="font-headline-sm text-headline-sm text-secondary dark:text-secondary-fixed mb-space-xs">
+                Atelier Botânico &amp; Cachos
+            </div>
+<p class="font-body-sm text-body-sm max-w-xs">Beleza orgânica, consciente e especializada em curvaturas. Um espaço de acolhimento e ciência.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-space-md md:gap-space-xl text-center">
+<nav class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+<a class="hover:text-primary transition-colors text-on-surface-variant dark:text-surface-variant" href="#">Polítca de Privacidade</a>
+<a class="hover:text-primary transition-colors text-on-surface-variant dark:text-surface-variant" href="#">Termos de Uso</a>
+<a class="hover:text-primary transition-colors text-on-surface-variant dark:text-surface-variant" href="#">Cuidados em Casa</a>
+<a class="hover:text-primary transition-colors text-on-surface-variant dark:text-surface-variant" href="#">Trabalhe Conosco</a>
+</nav>
+</div>
+<div class="text-center md:text-right font-body-sm text-body-sm">
+<p>© 2024 Atelier Botânico &amp; Cachos. Beleza orgânica e consciente.</p>
+<div class="flex justify-center md:justify-end gap-space-sm mt-space-sm">
+<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="photo_camera" style="font-size: 20px;">photo_camera</span></a>
+<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="share" style="font-size: 20px;">share</span></a>
+</div>
+</div>
+</footer>
+</body></html>

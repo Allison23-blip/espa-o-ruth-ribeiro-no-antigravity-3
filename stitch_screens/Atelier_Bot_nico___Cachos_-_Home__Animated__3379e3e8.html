@@ -1,0 +1,1157 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="pt-BR"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>
+@layer base{
+  html,body{margin:0;padding:0;}
+  body{overscroll-behavior:none;}
+  main>:first-child{margin-top:0!important;}
+  main>:last-child{margin-bottom:0!important;}
+}
+::-webkit-scrollbar{display:none;}
+
+/* Keyframe Animations & Micro-interactions */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-4px) scale(1.01); }
+}
+@keyframes shineSweep {
+  0% { transform: translateX(-150%) rotate(25deg); }
+  100% { transform: translateX(250%) rotate(25deg); }
+}
+@keyframes pulseHalo {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(127, 74, 58, 0.25); }
+  50% { box-shadow: 0 0 0 10px rgba(127, 74, 58, 0); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+.animate-float-subtle {
+  animation: floatSubtle 4s ease-in-out infinite;
+}
+.animate-pulse-halo {
+  animation: pulseHalo 2.5s infinite;
+}
+
+/* Button sweep light reflection effect */
+.shine-hover {
+  position: relative;
+  overflow: hidden;
+}
+.shine-hover::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: translateX(-150%) rotate(25deg);
+  transition: none;
+}
+.shine-hover:hover::after {
+  animation: shineSweep 0.85s ease-out;
+}
+
+/* Scroll reveal initial states */
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-fade-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay helpers */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* Filter Card Transition */
+.service-card {
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-surface": "#1c1c19",
+          "inverse-primary": "#fcb6a0",
+          "error-container": "#ffdad6",
+          "tertiary": "#7b4c3b",
+          "surface-container-high": "#ebe8e3",
+          "primary-fixed": "#ffdbd0",
+          "on-error-container": "#93000a",
+          "on-primary": "#ffffff",
+          "on-background": "#1c1c19",
+          "surface-container-low": "#f6f3ee",
+          "inverse-surface": "#31302d",
+          "on-primary-container": "#fff3f0",
+          "surface-container-highest": "#e5e2dd",
+          "on-surface-variant": "#52443f",
+          "primary-fixed-dim": "#fcb6a0",
+          "surface-container": "#f0ede9",
+          "on-tertiary-fixed": "#331205",
+          "on-secondary-fixed": "#121f10",
+          "on-tertiary": "#ffffff",
+          "secondary-fixed": "#d8e7cf",
+          "on-tertiary-container": "#fff3f0",
+          "on-primary-fixed": "#351004",
+          "inverse-on-surface": "#f3f0eb",
+          "tertiary-fixed": "#ffdbcf",
+          "surface": "#fcf9f4",
+          "outline-variant": "#d7c2bc",
+          "outline": "#84736e",
+          "surface-bright": "#fcf9f4",
+          "on-primary-fixed-variant": "#6a3a2a",
+          "error": "#ba1a1a",
+          "on-secondary-container": "#586753",
+          "surface-tint": "#86503f",
+          "secondary-container": "#d5e4cc",
+          "surface-variant": "#e5e2dd",
+          "surface-dim": "#dcdad5",
+          "on-tertiary-fixed-variant": "#673b2b",
+          "tertiary-fixed-dim": "#f7b8a2",
+          "primary": "#7f4a3a",
+          "secondary-fixed-dim": "#bccbb4",
+          "on-secondary": "#ffffff",
+          "primary-container": "#9b6250",
+          "secondary": "#54624f",
+          "surface-container-lowest": "#ffffff",
+          "background": "#fcf9f4",
+          "on-error": "#ffffff",
+          "tertiary-container": "#976452",
+          "on-secondary-fixed-variant": "#3d4a39"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin-mobile": "1.25rem",
+          "space-sm": "0.75rem",
+          "gutter": "1.5rem",
+          "space-md": "1rem",
+          "space-xs": "0.5rem",
+          "space-2xl": "3rem",
+          "space-3xl": "4.5rem",
+          "space-lg": "1.5rem",
+          "space-2xs": "0.25rem",
+          "space-4xl": "6rem",
+          "margin-desktop": "3rem",
+          "space-xl": "2rem"
+        },
+        "fontFamily": {
+          "headline-lg": [
+            "Playfair Display"
+          ],
+          "headline-sm": [
+            "Playfair Display"
+          ],
+          "headline-lg-mobile": [
+            "Playfair Display"
+          ],
+          "body-md": [
+            "Plus Jakarta Sans"
+          ],
+          "body-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "display-hero-mobile": [
+            "Playfair Display"
+          ],
+          "display-hero": [
+            "Playfair Display"
+          ],
+          "body-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Playfair Display"
+          ],
+          "title-md": [
+            "Plus Jakarta Sans"
+          ],
+          "label-md": [
+            "Plus Jakarta Sans"
+          ],
+          "title-sm": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "headline-lg": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "15px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "display-hero-mobile": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-hero": [
+            "56px",
+            {
+              "lineHeight": "64px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.06em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "500"
+            }
+          ],
+          "title-md": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "title-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] transition-all duration-300"><div class="h-20 max-w-[1280px] mx-auto px-margin-desktop flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-sm group cursor-pointer"><img alt="Logo Atelier Botânico &amp; Cachos" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWLD2pkR9XRE9qAJYjWMz-olbpW0N_zjZnzw7KZWfk2KydV1BLbH6llzX3XmqSjxZHMukQzcbzsVFfDjHO6kRgm-dHnYt35fNS_-jEIox8ZMtljkNKQ07FGP2JSc9MrIK2XBA0tC5wDdFA7QnMcE_6rPzdJ1SCCMwhe1ZkrQWWUXvQigfvOCfpBSwQ5QvRTxyucxJCuCkE4Y-AjvyGM6sI127CxJaDPJWdiw5U5GDMYw-Ur2uJ3iS9"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-none transition-colors group-hover:text-primary-container">Atelier Botânico</span><span class="font-label-sm text-label-sm uppercase text-secondary tracking-widest">Cachos &amp; Estética Natural</span></div></div><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-title-sm"><a aria-current="page" class="transition-all duration-200 text-primary font-title-sm hover:scale-105" data-path="inicio" href="#">Início</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all duration-200 hover:-translate-y-0.5" data-path="quem-somos" href="#quem-somos">Quem Somos</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all duration-200 hover:-translate-y-0.5" data-path="servicos-e-precos" href="#cardapio">Serviços &amp; Preços</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all duration-200 hover:-translate-y-0.5" data-path="antes-e-depois" href="#galeria">Antes e Depois</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all duration-200 hover:-translate-y-0.5" data-path="depoimentos" href="#depoimentos">Depoimentos</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all duration-200 hover:-translate-y-0.5" data-path="localizacao" href="#localizacao">Localização</a></nav><div class="flex items-center gap-space-md"><a class="shine-hover hidden sm:inline-flex items-center justify-center px-space-lg py-space-xs rounded-lg bg-primary hover:bg-primary-container text-on-primary font-title-sm text-title-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 shadow-[0_4px_12px_-2px_rgba(44,35,32,0.08)] active:scale-95" data-path="agendamento" href="https://wa.me/5511987654321?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20no%20Atelier.">Agendar no WhatsApp</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-110 active:scale-95"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface-bright pb-space-3xl lg:pb-space-4xl pt-space-md">
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<!-- Top Badges & Highlights Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-xl reveal-fade-up">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-2xs rounded-full bg-secondary-container text-on-secondary-container shadow-sm transition-all duration-300 hover:shadow-md hover:bg-secondary-fixed cursor-default">
+<span class="material-symbols-outlined text-[16px] animate-pulse">spa</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Espaço Integrado de Beleza &amp; Bem-Estar Familiar</span>
+</div>
+<div class="hidden sm:flex items-center gap-space-xs text-secondary font-label-md text-label-md transition-colors hover:text-primary cursor-default">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Atendimento Humanizado com Hora Marcada</span>
+</div>
+</div>
+<!-- Main Asymmetric Hero Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left Editorial Content (7 cols) -->
+<div class="lg:col-span-7 flex flex-col items-start space-y-space-lg reveal-fade-up delay-100">
+<h1 class="font-display-hero text-display-hero text-on-surface tracking-tight">
+            O autocuidado completo que <span class="text-primary italic font-serif inline-block transition-transform duration-300 hover:scale-105">abraça você</span> e sua família — da pele radiante à potência dos seus cachos.
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Depilação acolhedora e sem dor com ceras nobres, tratamentos faciais e corporais regenerativos, design de sobrancelhas e a superespecialização em cortes e finalização de cabelos ondulados, cacheados e crespos.
+          </p>
+<!-- Primary CTAs -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs w-full sm:w-auto">
+<a class="shine-hover inline-flex items-center justify-center gap-space-xs px-space-xl py-space-md rounded-lg bg-primary hover:bg-primary-container text-on-primary font-title-sm text-title-sm shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl active:scale-95 group" href="https://wa.me/5511987654321?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20no%20Atelier.">
+<span class="material-symbols-outlined text-[20px] transition-transform duration-300 group-hover:rotate-12">calendar_month</span>
+<span>Agende seu Horário via WhatsApp</span>
+</a>
+<a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-title-sm text-title-sm transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-sm active:scale-95 group" href="#cardapio">
+<span class="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover:translate-x-0.5">menu_book</span>
+<span>Ver Cardápio &amp; Preços</span>
+</a>
+</div>
+<!-- 4 Pillars / Features Chips -->
+<div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-space-xs w-full pt-space-md">
+<div class="flex items-center gap-space-xs p-space-xs bg-surface-container-low rounded-lg transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-1 hover:shadow-sm cursor-default group">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 transition-transform duration-300 group-hover:scale-125">volunteer_activism</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Depilação Humanizada Sem Dor</span>
+</div>
+<div class="flex items-center gap-space-xs p-space-xs bg-surface-container-low rounded-lg transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-1 hover:shadow-sm cursor-default group">
+<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 transition-transform duration-300 group-hover:scale-125">air</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Especialistas Curvaturas 2A a 4C</span>
+</div>
+<div class="flex items-center gap-space-xs p-space-xs bg-surface-container-low rounded-lg transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-1 hover:shadow-sm cursor-default group">
+<span class="material-symbols-outlined text-tertiary text-[20px] flex-shrink-0 transition-transform duration-300 group-hover:scale-125">family_restroom</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Espaço Kids &amp; Acompanhantes</span>
+</div>
+<div class="flex items-center gap-space-xs p-space-xs bg-surface-container-low rounded-lg transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-1 hover:shadow-sm cursor-default group">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 transition-transform duration-300 group-hover:scale-125">groups</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Feminino, Masculino e Infantil</span>
+</div>
+</div>
+</div>
+<!-- Right Visual Showcase (5 cols) -->
+<div class="lg:col-span-5 relative mt-space-xl lg:mt-0 reveal-fade-up delay-200">
+<div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-xl bg-surface-container group">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Editorial portrait of a radiant Brazilian woman with natural voluminous hydrated curls smiling serenely, soft earthy terracotta and warm beige background, organic botanical studio aesthetic, warm studio lighting with dewy skin and natural beauty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPEJXdUhtH69VamybzuTiJBFgwteRzDVJUN0TmcT7H4m5OQq4D9QSOUHqW8xhgej8wId2h3T-pn9IRy3amt8fBL5G8JUIZ0TLn_8qfwaALG4k5xLiNY-yRDj127_y7DpXsiROqqvOOIavdl1RSzs_GDtqFKJ68iRhllxoqaSIvNs3b7RZ7h8dLslSFAmAZCr0lwlZ3Xk8DiEbBHCkzWvSbxjMdNxKPR428BLYeQWY1q8IHVUjpKYz8">
+<!-- Float Experience Card Over Image -->
+<div class="absolute bottom-space-md left-space-md right-space-md p-space-md rounded-xl bg-surface/90 backdrop-blur-md shadow-lg flex items-center justify-between animate-float-subtle transition-all duration-300 hover:bg-surface hover:shadow-2xl">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary transition-transform duration-300 hover:rotate-12">
+<span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm text-on-surface leading-tight">Protocolos Exclusivos</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ceras nobres de camomila &amp; óleos vegetais</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">100%</span>
+<span class="block font-label-sm text-label-sm text-secondary">Natural &amp; Seguro</span>
+</div>
+</div>
+</div>
+<!-- Small Accent Badge Floating Top Right -->
+<div class="absolute -top-4 -right-2 hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-lowest shadow-md text-on-surface animate-float-slow transition-transform hover:scale-105">
+<span class="flex h-2.5 w-2.5 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Agendas Abertas Esta Semana</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- QUEM SOMOS & NOSSA HISTÓRIA -->
+<section class="w-full py-space-3xl bg-surface-container-low" id="quem-somos">
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Visual Column -->
+<div class="lg:col-span-5 grid grid-cols-2 gap-space-sm reveal-fade-up">
+<div class="aspect-[3/4] rounded-xl overflow-hidden shadow-md bg-surface-container group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Intimate, warm salon interior showing botanical styling stations with plants, warm terracotta wall accents, wooden counters, and a relaxing scalp massage treatment in progress." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg5OXoH93jRLTdyiqoYpGnsASzD8biiekSzlcdYV5JB6FIxh53bAtTCz_wJVA5MqiIGoX9o7e3mhnm0m3S-eoIQq-ZT9gTSztSR80ny_v9qz4L6A7jQ3YVlHq2o96RHM68d3HlorHVxu5Y1lnEDkJbmUA8Mqz18csqsSV8k74Woan1fIJlyJe_MoFkwwz59nvDQCV6f9WxVHVaArf3JFP1ktG0AdGu99hh59QUPw6IRwywWVM7zcVf">
+</div>
+<div class="aspect-[3/4] rounded-xl overflow-hidden shadow-md bg-surface-container translate-y-space-md group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Gentle and loving aesthetician consulting a young girl and mother touching textured curly hair with genuine care and affection in a bright tranquil studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7iXb07_UvB8D54NRrlkyi-NCtSwW3UAZ05qoud-dpVqiR2xvyZDDkc8FPSE8UCMizN0n6Og5_XRRHv01D5WYpOY92kvOFCfjH6o50wW4nuFlAIrfQqirYrm0LwmYvR-GFyVvu8cbcYdrOa4Ls95q1lPK20sbVd_cNbRfuDs7zcDEFoZYnFZF8qb7a795rCFA-m71fhqjXDRM6sWZXakBao0aB0hRUega308iJt2IiCttZN2bmZBa4">
+</div>
+</div>
+<!-- Narrative Column -->
+<div class="lg:col-span-7 flex flex-col space-y-space-md lg:pl-space-lg reveal-fade-up delay-150">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Nossa Filosofia</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+            Um refúgio criado para acolher sua essência com afeto e ciência
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            O <strong>Atelier Botânico &amp; Cachos</strong> nasceu do inconformismo com procedimentos padronizados e dolorosos. Criamos um espaço acolhedor e seguro onde o autocuidado não é uma obrigação estressante, mas uma pausa regenerativa para o corpo, a mente e o amor-próprio de toda a sua família.
+          </p>
+<!-- Pillars -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-2xs transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-secondary/30 cursor-default group">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed mb-space-2xs transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+<span class="material-symbols-outlined text-[22px]">child_care</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Segurança &amp; Kids</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Atendimento calmo e respeitoso para crianças no seu próprio tempo.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-2xs transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-primary/30 cursor-default group">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed mb-space-2xs transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+<span class="material-symbols-outlined text-[22px]">water_drop</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Ceras Nobres</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cera quente e resinada sem dor, com bioativos hipoalergênicos.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-2xs transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-secondary/30 cursor-default group">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container mb-space-2xs transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+<span class="material-symbols-outlined text-[22px]">diversity_1</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Atendimento Unissex</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Homens, mulheres e jovens em ambiente neutro e privativo.</p>
+</div>
+</div>
+<!-- Impact Metrics -->
+<div class="grid grid-cols-3 gap-space-sm pt-space-sm border-t border-surface-variant/40">
+<div class="group cursor-default">
+<div class="font-headline-sm text-headline-sm text-primary font-bold transition-transform duration-300 group-hover:scale-105 inline-block">4.9 / 5.0</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Avaliação no Google</div>
+</div>
+<div class="group cursor-default">
+<div class="font-headline-sm text-headline-sm text-primary font-bold transition-transform duration-300 group-hover:scale-105 inline-block">+4.800</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Clientes Atendidos</div>
+</div>
+<div class="group cursor-default">
+<div class="font-headline-sm text-headline-sm text-primary font-bold transition-transform duration-300 group-hover:scale-105 inline-block">100%</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Fórmulas Livres de Toxinas</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CARDÁPIO DE SERVIÇOS DETALHADO COM PREÇOS -->
+<section class="w-full py-space-3xl lg:py-space-4xl bg-surface" id="cardapio">
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="flex flex-col items-center text-center mb-space-2xl reveal-fade-up">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold mb-space-2xs">Menu Transparente</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface max-w-2xl">
+          Cardápio de Serviços &amp; Cuidados Integrados
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-space-xs">
+          Preços justos, horários pontuais e produtos selecionados. Escolha a sua categoria favorita e agende facilmente.
+        </p>
+<!-- Category Filter Tabs -->
+<div class="flex flex-wrap justify-center gap-space-xs mt-space-lg" id="serviceTabs">
+<button class="category-btn px-space-md py-space-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md transition-all duration-300 shadow-sm hover:scale-105 active:scale-95 cursor-pointer" data-cat="all">
+            Todos os Serviços
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="depilacao">
+            Depilação Humanizada
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="skincare">
+            Skincare &amp; Corporal
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="cachos">
+            Cachos &amp; Curvaturas
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="penteados">
+            Penteados &amp; Makes
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="masculino">
+            Homens &amp; Sobrancelhas
+          </button>
+</div>
+</div>
+<!-- Services Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="servicesGrid">
+<!-- CATEGORIA 1: DEPILAÇÃO -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Depilação Facial</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 15 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Buço ou Queixo com Cera Resinada</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Aplicação delicada com cera hipoalergênica resinada calmante. Sem ardência ou vermelhidão excessiva.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 25</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Buço%20ou%20Queixo">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Depilação Corporal</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 20 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Axilas + Argiloterapia Pós</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Remoção suave seguida de máscara de argila branca botânica para clarear e acalmar a região imediatamente.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 38</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Axilas%20com%20Argiloterapia">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between relative overflow-hidden group" data-service-cat="depilacao">
+<div class="absolute top-0 right-0 bg-primary text-on-primary font-label-sm text-label-sm px-space-md py-space-2xs rounded-bl-lg shadow-sm">Destaque Sem Dor</div>
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Íntima Humanizada</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 35 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Virilha Completa com Anestésico Natural</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Método exclusivo com cera quente elástica à base de camomila e calêndula. Toque suave sem puxão brusco.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 75</span>
+<a class="shine-hover px-space-md py-space-xs rounded-lg bg-primary text-on-primary hover:bg-primary-container font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Virilha%20Completa%20Humanizada">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Pernas</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 30 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Meia Perna ou Perna Inteira</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Aplicação em roll-on aquecido com hidratação finalizadora de melaleuca e óleo de amêndoas.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">a partir R$ 45</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Depilação%20Perna">Reservar</a>
+</div>
+</div>
+<!-- CATEGORIA 2: SKINCARE & ESTÉTICA CORPORAL -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="skincare">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Limpeza Facial</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 75 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Limpeza de Pele Profunda + LEDterapia</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Vapor de ozônio, extração indolor de cravos, alta frequência e LED azul cicatrizante para poros limpos e luminosos.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 130</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Limpeza%20de%20Pele%20Profunda">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="skincare">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Ritual Corporal</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 45 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Banho de Lua Dourado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Descoloração ultra suave e protetora dos pelos com aplicação prévia de óleos vegetais e esfoliação aromática.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 90</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Banho%20de%20Lua%20Dourado">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="skincare">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Renovação Celular</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 50 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Peeling de Diamante Revitalizante</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Microdermoabrasão controlada para suavizar manchas leves, linhas de expressão e uniformizar o tom da pele facial.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 110</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Peeling%20de%20Diamante">Reservar</a>
+</div>
+</div>
+<!-- CATEGORIA 3: CABELOS CACHEADOS -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between relative overflow-hidden group" data-service-cat="cachos">
+<div class="absolute top-0 right-0 bg-secondary text-on-secondary font-label-sm text-label-sm px-space-md py-space-2xs rounded-bl-lg shadow-sm">2A a 4C</div>
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Corte Especializado</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 60 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Corte a Seco Estruturado para Cachos</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Técnica fio a fio no caimento real das suas mechas. Respeita o fator encolhimento e desenha o volume dos seus sonhos.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 120</span>
+<a class="shine-hover px-space-md py-space-xs rounded-lg bg-primary text-on-primary hover:bg-primary-container font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Corte%20a%20Seco%20em%20Cachos">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="cachos">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Nutrição Botânica</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 80 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Cronograma Capilar &amp; Fitagem Fita</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Higienização no-poo/low-poo, máscara com manteiga de murumuru e finalização com fitagem detalhada para ultra definição.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 140</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Cronograma%20Capilar%20e%20Fitagem">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="cachos">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Saúde do Couro</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 70 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Terapia Capilar &amp; Controle de Queda</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Desintoxicação do bulbo capilar com óleos essenciais ozonizados, massagem craniana revigorante e alta frequência.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 160</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Terapia%20Capilar">Reservar</a>
+</div>
+</div>
+<!-- CATEGORIA 4: PENTEADOS & ESTILIZAÇÃO -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="penteados">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Linha Infantil Afetiva</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 50 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Penteados Artísticos Infantis</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tranças nagô decoradas com tererês, laços e finalização mágica sem puxões, com ambiente lúdico e seguro para os pequenos.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 85</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Penteado%20Infantil">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="penteados">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Eventos &amp; Festas</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 75 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Penteado Festa &amp; Coque Orgânico</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Estilização sofisticada valorizando cachos naturais, mechas soltas com frescor moderno para noivas, madrinhas e formandas.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 150</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Penteado%20Festa">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="penteados">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Make Natural Glow</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 60 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Maquiagem Social Leve &amp; Duradoura</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pele acetinada sem aspecto pesado de reboco. Realce dos traços naturais com cosméticos orgânicos e fixação de até 12 horas.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 140</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Maquiagem%20Social">Reservar</a>
+</div>
+</div>
+<!-- CATEGORIA 5: MASCULINO & SOBRANCELHAS -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="masculino">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Masculino</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 25 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Design Masculino Alinhado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Limpeza estratégica entre sobrancelhas e contorno sem afinar nem feminilizar. Visual limpo, viril e elegante.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 40</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Design%20Masculino">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="masculino">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Design &amp; Pigmento</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 35 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Design com Henna Efeito Sombra</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Visagismo personalizado com pigmentação botânica de alta fixação que preenche falhas sem efeito artificial.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 55</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Design%20com%20Henna">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="masculino">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Cuidados com a Barba</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 35 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Alinhamento de Barba + Sobrancelhas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Contorno de barba com toalha quente aromática, hidratação com bálsamo vegetal e ajuste minucioso do olhar.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 65</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Barba%20e%20Sobrancelhas">Reservar</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PORTFÓLIO & GALERIA (ANTES E DEPOIS) -->
+<section class="w-full py-space-3xl bg-surface-container-low" id="galeria">
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl reveal-fade-up">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Resultados Concretos</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-2xs">
+            Transformações que Contam Histórias
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-space-2xs">
+            Veja a diferença que mãos gentis, técnica precisa e produtos botânicos causam na saúde dos cabelos e da pele.
+          </p>
+</div>
+<div class="inline-flex items-center gap-space-xs text-secondary font-title-sm text-title-sm cursor-default">
+<span class="material-symbols-outlined text-[20px] animate-spin" style="animation-duration: 8s;">auto_awesome</span>
+<span>Fotos sem filtros digitais enganosos</span>
+</div>
+</div>
+<!-- Comparison Showcase Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1: Cachos -->
+<div class="rounded-2xl overflow-hidden bg-surface shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group cursor-pointer">
+<div class="relative w-full aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Split side-by-side comparison before and after showing textured curly hair. Left side dry undefined curls, right side voluminous bounce shiny defined curly ringlets with fresh organic cut." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV3P8jlbu7_nZwxx-zqwT0MG_2dZ3AQuYi5fu4NOw3ukl0lIuwyHFx319R4RQv_Nahq-Ka1kJVbXTODvWa6Nea33IWFhKJMwGLICopdjf7zxHMdj12_xkMAaSKFLOxsvpxbeWjJ8-oybq-leRt8OSpDhlB6CyR47tEkWPNqdBn6oD6T4K8OXqtLlMoKZZAXtURPUjoPkPtLp27-f-I8nv8D7_28DdIuarGH9utvytzF4ewaiiop8Jv">
+<div class="absolute top-space-xs left-space-xs px-space-xs py-space-2xs rounded bg-surface/90 font-label-sm text-label-sm text-primary font-bold shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:text-on-primary">
+              Antes &amp; Depois
+            </div>
+<div class="absolute bottom-space-xs right-space-xs px-space-xs py-space-2xs rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur-sm">
+              Corte 3C + Nutrição
+            </div>
+</div>
+<div class="p-space-md flex flex-col gap-space-2xs flex-grow">
+<h4 class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors">Redefinição de Curvatura</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Transição com alívio do peso e finalização com fitagem botânica que devolveu o movimento natural dos fios.</p>
+</div>
+</div>
+<!-- Card 2: Penteado Infantil -->
+<div class="rounded-2xl overflow-hidden bg-surface shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group cursor-pointer">
+<div class="relative w-full aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Delightful cute little black girl with braided royal hairstyle with soft ribbon ties and subtle gold beads smiling with absolute happiness and comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXlMBZpL4aa0dZW71WziKFVmjzB8XukWOtjfrM37YNy4axyYQjbsM8zKbdHp4Tdo1YsPPVeqdqvmLnGOsRGJ3v2smVQALgk3NLUdH4ZwJcXwCmIVMFcN_dScdGeWdEafeu92pW1B4Vx76F-9HmdkKEdJqN7r3Yddco8Y0qPyksYwV6Vrx5h2BrGBiI40yohrVX--FTJ9wa21XZQr1T33ppEk_-4LbiR2fg6SyYJUa0IqwsZXm66P0H">
+<div class="absolute top-space-xs left-space-xs px-space-xs py-space-2xs rounded bg-surface/90 font-label-sm text-label-sm text-secondary font-bold shadow-sm transition-all duration-300 group-hover:bg-secondary group-hover:text-on-secondary">
+              Linha Infantil
+            </div>
+<div class="absolute bottom-space-xs right-space-xs px-space-xs py-space-2xs rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur-sm">
+              Festa Escolar
+            </div>
+</div>
+<div class="p-space-md flex flex-col gap-space-2xs flex-grow">
+<h4 class="font-title-sm text-title-sm text-on-surface group-hover:text-secondary transition-colors">Penteado Princesa Afetivo</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Confortável para a criança brincar a festa toda sem dor na raiz, valorizando a beleza original dos cachinhos.</p>
+</div>
+</div>
+<!-- Card 3: Limpeza de Pele -->
+<div class="rounded-2xl overflow-hidden bg-surface shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group cursor-pointer">
+<div class="relative w-full aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Extreme close up macro shot of radiant clear skin on a cheek and nose area, glowing hydrated texture with clean pores and natural skin glow in warm spa lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-CYAXgNkraaimt2a0dl0iVPINclb_zjtlxBwpM1mC7GSixqsbXEod9P7s0_n4rg8KJppzGVg3JuUXdrRolipa4fMWIvPuxaxSxwL0sTCSL_Ye_d0BW6LRrtFd9Iql6usW80UpPrEdbvhLtU9Ym17elwk-L_-mBdIZRH-B70C0g0xGXBlGXOdUu6hJr5AvKTJ0EdQ-YNXkYLTLDxGc93d4YY_c0T1o0DoYWUdNEgdcmcEQ8OOvgZ7S">
+<div class="absolute top-space-xs left-space-xs px-space-xs py-space-2xs rounded bg-surface/90 font-label-sm text-label-sm text-primary font-bold shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:text-on-primary">
+              Antes &amp; Depois
+            </div>
+<div class="absolute bottom-space-xs right-space-xs px-space-xs py-space-2xs rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur-sm">
+              Limpeza + LED
+            </div>
+</div>
+<div class="p-space-md flex flex-col gap-space-2xs flex-grow">
+<h4 class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors">Desobstrução &amp; Viço Imediato</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Remoção de microcravos e redução da inflamação com LED azul, sem marcas vermelhas após o procedimento.</p>
+</div>
+</div>
+<!-- Card 4: Sobrancelhas -->
+<div class="rounded-2xl overflow-hidden bg-surface shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group cursor-pointer">
+<div class="relative w-full aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Before and after detail shot of natural eyebrows, softly shaded with organic henna matching dark hair tone, clean symmetric arch and velvety skin finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXmHvxCgXyx9uMxo8KwpZAKnrdnclvRSrXUdK0lC7LO6-4ObO2aJWhEvcuaR1MVIhQTKR980HMs3x8GMJcuLCeT_FEW_T3ZcSLh2wbrO9wny_htpsHYDWsZVQvbKt01DQVSh9JokpaS3zLqnsQqxT_V9Lq82cSFVjJQViecr5iY7oKxglluLN-V9xlLJkKCYh4wrGJKm8x-mIUkfvuktMuRymL5PUIv4ZoO7NfEL8qwtOAnTMUNKj6">
+<div class="absolute top-space-xs left-space-xs px-space-xs py-space-2xs rounded bg-surface/90 font-label-sm text-label-sm text-tertiary font-bold shadow-sm transition-all duration-300 group-hover:bg-tertiary group-hover:text-on-tertiary">
+              Visagismo
+            </div>
+<div class="absolute bottom-space-xs right-space-xs px-space-xs py-space-2xs rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur-sm">
+              Henna Orgânica
+            </div>
+</div>
+<div class="p-space-md flex flex-col gap-space-2xs flex-grow">
+<h4 class="font-title-sm text-title-sm text-on-surface group-hover:text-tertiary transition-colors">Design com Sombra Natural</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Simetria calculada pelo formato do rosto. Preenchimento de falhas sem artificialismo ou aspecto carimbado.</p>
+</div>
+</div>
+</div>
+<div class="mt-space-xl p-space-md rounded-xl bg-surface-container flex flex-col sm:flex-row items-center justify-between gap-space-md shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[28px] animate-bounce" style="animation-duration: 2.5s;">photo_camera</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Quer ver mais fotos do nosso portfólio diário? Visite nosso feed e stories com vídeos em tempo real.
+          </p>
+</div>
+<a class="px-space-lg py-space-xs rounded-lg bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-primary font-title-sm text-title-sm transition-all duration-300 shadow-sm hover:shadow-md flex-shrink-0 active:scale-95 transform hover:-translate-y-0.5" href="https://wa.me/5511987654321?text=Olá!%20Vi%20as%20fotos%20de%20antes%20e%20depois%20e%20quero%20tirar%20uma%20dúvida.">
+          Tirar Dúvidas com a Especialista
+        </a>
+</div>
+</div>
+</section>
+<!-- DEPOIMENTOS DE CLIENTES (PROVA SOCIAL) -->
+<section class="w-full py-space-3xl lg:py-space-4xl bg-surface" id="depoimentos">
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="flex flex-col items-center text-center mb-space-2xl reveal-fade-up">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold mb-space-2xs">Experiências Reais</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+          O que dizem as famílias que confiam no Atelier
+        </h2>
+<div class="flex items-center gap-space-xs text-primary mt-space-2xs">
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 hover:scale-125" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 hover:scale-125" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 hover:scale-125" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 hover:scale-125" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 hover:scale-125" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-title-sm text-title-sm text-on-surface ml-space-2xs">Nota 4.9 baseada em mais de 350 avaliações</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Depoimento 1 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low flex flex-col justify-between shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 hover:bg-surface-container cursor-default group">
+<div>
+<div class="flex text-primary mb-space-xs">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-space-md leading-relaxed">
+              "Minha filha tinha pavor de salão. O carinho e a paciência com os cachinhos dela no penteado para a festa da escola foram indescritíveis! Agora ela só quer vir aqui."
+            </p>
+</div>
+<div class="flex items-center gap-space-sm pt-space-sm border-t border-surface-container">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-title-sm font-bold transition-transform duration-300 group-hover:scale-110">
+              MS
+            </div>
+<div>
+<h5 class="font-title-sm text-title-sm text-on-surface leading-tight">Mariana S.</h5>
+<span class="font-label-sm text-label-sm text-secondary">Mãe da Bia, 7 anos</span>
+</div>
+</div>
+</div>
+<!-- Depoimento 2 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low flex flex-col justify-between shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 hover:bg-surface-container cursor-default group">
+<div>
+<div class="flex text-primary mb-space-xs">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-space-md leading-relaxed">
+              "Espaço muito profissional e sem julgamentos. Faço meu design de sobrancelha e barba aqui todo mês. Ambiente calmo e nota 10 no respeito."
+            </p>
+</div>
+<div class="flex items-center gap-space-sm pt-space-sm border-t border-surface-container">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-title-sm font-bold transition-transform duration-300 group-hover:scale-110">
+              LF
+            </div>
+<div>
+<h5 class="font-title-sm text-title-sm text-on-surface leading-tight">Lucas Ferreira</h5>
+<span class="font-label-sm text-label-sm text-secondary">Cliente Mensal (Barba &amp; Sobrancelha)</span>
+</div>
+</div>
+</div>
+<!-- Depoimento 3 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low flex flex-col justify-between shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 hover:bg-surface-container cursor-default group">
+<div>
+<div class="flex text-primary mb-space-xs">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-space-md leading-relaxed">
+              "A depilação íntima deles realmente não dói como em outros lugares. A cera resinada e o cuidado da profissional fazem toda a diferença na minha pele ultrassensível."
+            </p>
+</div>
+<div class="flex items-center gap-space-sm pt-space-sm border-t border-surface-container">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-title-sm font-bold transition-transform duration-300 group-hover:scale-110">
+              CD
+            </div>
+<div>
+<h5 class="font-title-sm text-title-sm text-on-surface leading-tight">Camila Duarte</h5>
+<span class="font-label-sm text-label-sm text-secondary">Depilação Humanizada</span>
+</div>
+</div>
+</div>
+<!-- Depoimento 4 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low flex flex-col justify-between shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 hover:bg-surface-container cursor-default group">
+<div>
+<div class="flex text-primary mb-space-xs">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-space-md leading-relaxed">
+              "O corte a seco nos meus cachos tipo 3C devolveu minha autoestima que os salões convencionais tinham tirado. Indico de olhos fechados!"
+            </p>
+</div>
+<div class="flex items-center gap-space-sm pt-space-sm border-t border-surface-container">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-title-sm font-bold transition-transform duration-300 group-hover:scale-110">
+              RA
+            </div>
+<div>
+<h5 class="font-title-sm text-title-sm text-on-surface leading-tight">Renata Albuquerque</h5>
+<span class="font-label-sm text-label-sm text-secondary">Transição Capilar &amp; Corte</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LOCALIZAÇÃO, HORÁRIOS & NORMAS DE ATENDIMENTO -->
+<section class="w-full py-space-3xl bg-surface-container-low" id="localizacao">
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Side: Map & Address -->
+<div class="lg:col-span-7 flex flex-col space-y-space-md reveal-fade-up">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Venha nos Conhecer</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+            Localização Central &amp; Acolhedora
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Ambiente planejado com salas privativas climatizadas, espaço para café botânico e estacionamento conveniado em frente ao edifício.
+          </p>
+<!-- Interactive Static Map View -->
+<div class="w-full h-72 rounded-2xl bg-cover bg-center shadow-md relative overflow-hidden flex items-end p-space-md group" data-location="Av. das Palmeiras, 1420, São Paulo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLlvWH4rea--E_whiW8UCHzYAhWSn8XeYultvOjjVcciC-cwsRxcpvHOGcZDwOgrR6OUyCfcwJDEeTHw04oNdomD9QpGKiDZYrIagpNbMfyIOiEUx_1rvNinglJCcYLush9DReAcH-91Sx4XeBGYTUmkP3KZHt92-21He-wY0mALwvMoqcK9lUCQtEK4P-LJVJp8vL5gU2ZL5q_-dauMCoE740a1EBimt31TfRXasLnVKCWvayupQ9')">
+<div class="p-space-sm bg-surface/95 backdrop-blur-md rounded-xl shadow-md flex items-center justify-between w-full transition-all duration-300 group-hover:bg-surface group-hover:shadow-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px] animate-bounce" style="animation-duration: 2s;">location_on</span>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface block">Av. das Palmeiras, 1420 - Sala 302</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Edifício Boulevard Estética</span>
+</div>
+</div>
+<a class="px-space-md py-space-xs rounded-lg bg-primary text-on-primary font-title-sm text-title-sm hover:bg-primary-container transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://maps.google.com/?q=Av.+das+Palmeiras,+1420" target="_blank">
+                Abrir Mapa
+              </a>
+</div>
+</div>
+<!-- Schedule Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-space-md rounded-xl bg-surface flex items-start gap-space-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md cursor-default">
+<span class="material-symbols-outlined text-primary text-[24px]">schedule</span>
+<div>
+<h4 class="font-title-sm text-title-sm text-on-surface">Horários de Atendimento</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">
+<strong>Terça a Sábado:</strong> 08h30 às 19h00<br>
+<em>Domingos e Segundas: Fechado (Manutenção &amp; Rituais)</em>
+</p>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface flex items-start gap-space-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md cursor-default">
+<span class="material-symbols-outlined text-secondary text-[24px]">forum</span>
+<div>
+<h4 class="font-title-sm text-title-sm text-on-surface">Suporte &amp; Agendamento</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">
+                  WhatsApp: (11) 98765-4321<br>
+<span class="inline-flex items-center text-secondary font-label-sm font-bold">
+<span class="h-2 w-2 rounded-full bg-secondary mr-1 animate-ping"></span>
+                    Resposta média em 15 minutos
+                  </span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Safety Standards & Policies -->
+<div class="lg:col-span-5 flex flex-col space-y-space-md bg-surface p-space-xl rounded-2xl shadow-sm reveal-fade-up delay-150">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[28px]">verified_user</span>
+<h3 class="font-title-md text-title-md">Normas &amp; Segurança Familiar</h3>
+</div>
+<div class="p-space-md rounded-xl bg-secondary-container/40 flex flex-col gap-space-2xs transition-all duration-300 hover:bg-secondary-container/60 cursor-default">
+<div class="flex items-center gap-space-xs text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">escalator_warning</span>
+<h4 class="font-title-sm text-title-sm">Atendimento Infantil</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Crianças menores de 16 anos devem estar <strong>obrigatoriamente acompanhadas</strong> por um responsável legal durante todo o tempo de permanência e procedimento no Atelier.
+            </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-2xs transition-all duration-300 hover:bg-surface-container-high cursor-default">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">event_repeat</span>
+<h4 class="font-title-sm text-title-sm">Cancelamento &amp; Reagendamento</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Flexibilidade com o seu tempo: avise-nos com até <strong>2 horas de antecedência</strong> caso precise remarcar, sem taxa de cancelamento.
+            </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-2xs transition-all duration-300 hover:bg-surface-container-high cursor-default">
+<div class="flex items-center gap-space-xs text-tertiary">
+<span class="material-symbols-outlined text-[20px]">clean_hands</span>
+<h4 class="font-title-sm text-title-sm">Higiene &amp; Biossegurança 100%</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Materiais descartáveis, espátulas individuais de uso único na depilação e autoclaves cirúrgicas de nível hospitalar.
+            </p>
+</div>
+<!-- Bottom Direct CTA Box -->
+<div class="pt-space-sm">
+<a class="shine-hover w-full flex items-center justify-center gap-space-xs py-space-md rounded-lg bg-primary hover:bg-primary-container text-on-primary font-title-sm text-title-sm transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 active:scale-95 group" href="https://wa.me/5511987654321?text=Olá!%20Quero%20agendar%20um%20atendimento%20para%20mim%20ou%20minha%20família.">
+<span class="material-symbols-outlined text-[20px] transition-transform duration-300 group-hover:rotate-12">chat</span>
+<span>Iniciar Conversa no WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL BANNER CTA -->
+<section class="w-full py-space-3xl bg-primary text-on-primary relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-primary-container/30 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 -top-20 w-80 h-80 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop text-center relative z-10 flex flex-col items-center reveal-fade-up">
+<span class="px-space-md py-space-2xs rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider mb-space-sm shadow-sm transition-transform duration-300 hover:scale-105 cursor-default">
+        Sua Essência Merece Cuidado
+      </span>
+<h2 class="font-headline-lg text-headline-lg max-w-2xl mb-space-md">
+        Pronto para experimentar um cuidado livre de dor, pressa e preconceitos?
+      </h2>
+<p class="font-body-lg text-body-lg text-primary-fixed max-w-xl mb-space-xl opacity-90">
+        Reserve seu horário agora mesmo. Estamos prontos para receber você, seus pequenos e quem você ama com carinho genuíno.
+      </p>
+<a class="shine-hover inline-flex items-center gap-space-xs px-space-2xl py-space-md rounded-lg bg-surface-container-lowest text-primary font-title-sm text-title-sm hover:bg-surface-container-low transition-all duration-300 shadow-xl transform hover:scale-105 active:scale-95 group" href="https://wa.me/5511987654321?text=Olá!%20Gostaria%20de%20reservar%20meu%20horário%20pelo%20site.">
+<span class="material-symbols-outlined text-[22px] transition-transform duration-300 group-hover:scale-110">calendar_today</span>
+<span>Reservar Meu Horário Agora</span>
+</a>
+</div>
+</section>
+</div>
+<!-- Vanilla JS for interactive Service Filtering and Smooth Scroll Reveals -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Service Filter tabs with smooth transition
+    const filterButtons = document.querySelectorAll('.category-btn');
+    const serviceCards = document.querySelectorAll('.service-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-cat');
+
+        // Toggle button active states
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-secondary', 'text-on-secondary', 'shadow-sm');
+          btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+
+        button.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        button.classList.add('bg-secondary', 'text-on-secondary', 'shadow-sm');
+
+        // Filter cards with micro-animation
+        serviceCards.forEach(card => {
+          const cardCat = card.getAttribute('data-service-cat');
+          if (category === 'all' || cardCat === category) {
+            card.style.display = 'flex';
+            requestAnimationFrame(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            });
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.96)';
+            setTimeout(() => {
+              if (card.style.opacity === '0') {
+                card.style.display = 'none';
+              }
+            }, 250);
+          }
+        });
+      });
+    });
+
+    // 2. Intersection Observer for Scroll Reveals
+    const revealElements = document.querySelectorAll('.reveal-fade-up');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('revealed'));
+    }
+  });
+</script></main><footer class="w-full bg-surface-container-low"><div class="max-w-[1280px] mx-auto px-margin-desktop py-space-3xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-space-2xl"><div class="md:col-span-5 flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><span class="font-headline-md text-headline-md text-primary">Atelier Botânico &amp; Cachos</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md leading-relaxed">Santuário botânico de estética integrativa, curvaturas naturais e cuidado regenerativo para todas as gerações da família. Uma experiência sensorial com toque gentil e maestria clínica.</p><div class="flex items-center gap-space-sm pt-space-xs"><a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm" href="#"><span class="material-symbols-outlined text-[20px]">photo_camera</span></a><a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm" href="#"><span class="material-symbols-outlined text-[20px]">chat</span></a><a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm" href="#"><span class="material-symbols-outlined text-[20px]">mail</span></a></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><h4 class="font-title-sm text-title-sm text-on-surface">Políticas do Atelier</h4><ul class="space-y-space-xs text-on-surface-variant font-body-sm text-body-sm"><li>Tolerância pontual de até 15 minutos para assegurar o protocolo completo.</li><li>Cancelamento ou reagendamento sem custo com até 24h de antecedência.</li><li>Atendimento infantil em horários silenciosos sob consulta prévia.</li></ul></div><div class="md:col-span-4 flex flex-col gap-space-sm"><h4 class="font-title-sm text-title-sm text-on-surface">Atendimento &amp; Endereço</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Alameda das Magnólias, 480 - Jardins, São Paulo - SP<br>Terça a Sábado: 09h às 19h<br>WhatsApp Direto: (11) 98765-4321</p><div class="pt-space-xs"><span class="inline-block px-space-sm py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform hover:scale-105 cursor-default">Ambiente Pet &amp; Eco Friendly</span></div></div></div><div class="pt-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md bg-surface-container/50 px-space-md py-space-sm rounded-lg"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Atelier Botânico &amp; Cachos. Todos os direitos reservados.</p><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacidade &amp; Cookies</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Termos de Atendimento</a></div></div></div></footer></body></html>

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Cardápio de Serviços &amp; Preços | Espaço Ruth Ribeiro</title>
+  <meta name="description" content="Confira todos os procedimentos, valores e tempos de atendimento do Espaço Ruth Ribeiro — Atelier Botânico &amp; Cachos. Adicione múltiplos serviços ao seu carrinho e agende online.">
+  <meta name="theme-color" content="#9b6250">
+  <link rel="icon" type="image/png" href="assets/images/logo_atelier.png">
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-bright": "#fcf9f4",
+            "primary": "#7f4a3a",
+            "primary-container": "#9b6250",
+            "secondary": "#54624f",
+            "secondary-fixed": "#d8e7cf",
+            "on-secondary-fixed": "#121f10",
+            "secondary-container": "#d5e4cc",
+            "on-secondary-container": "#586753",
+            "primary-fixed": "#ffdbd0",
+            "on-primary-fixed": "#351004",
+            "surface": "#faf7f2",
+            "surface-container": "#f0ede9",
+            "surface-container-low": "#f6f3ee",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#ebe8e3",
+            "surface-container-highest": "#e5e2dd",
+            "on-surface": "#2c2320",
+            "on-surface-variant": "#52443f",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff"
+          },
+          fontFamily: {
+            "serif": ["Playfair Display", "serif"],
+            "sans": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "title-md": ["Plus Jakarta Sans"],
+            "title-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"]
+          },
+          spacing: {
+            "space-2xs": "0.25rem",
+            "space-xs": "0.5rem",
+            "space-sm": "0.75rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "space-2xl": "3rem",
+            "space-3xl": "4.5rem",
+            "space-4xl": "6rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "margin-desktop": "3rem"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#FAF7F2] text-[#2C2320] antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header Global -->
+  <header class="sticky top-0 z-50 w-full bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E8DDD2] transition-all duration-300">
+    <div class="max-w-[1280px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+      <a class="flex items-center gap-3 group" href="index.html">
+        <img alt="Logo Atelier Botânico &amp; Cachos" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="assets/images/logo_atelier.png">
+        <span class="font-serif text-xl text-[#7f4a3a] tracking-tight font-medium">Atelier Botânico &amp; Cachos</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6">
+        <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="index.html">Início</a>
+        <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="sobre.html">Quem Somos</a>
+        <a class="transition-all duration-200 text-sm font-medium text-[#7f4a3a] font-semibold underline underline-offset-8 decoration-2" href="servicos.html">Serviços &amp; Preços</a>
+        <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="index.html#galeria">Antes e Depois</a>
+        <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="index.html#depoimentos">Depoimentos</a>
+        <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="index.html#localizacao">Localização</a>
+      </nav>
+      <div class="flex items-center gap-3.5">
+        <a href="carrinho.html" class="relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#f3ece2] text-[#7f4a3a] hover:bg-[#e8ddd2] transition-all hover:scale-105 active:scale-95 shadow-sm" title="Meu Carrinho">
+          <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+          <span class="global-cart-badge absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#7f4a3a] text-white text-[11px] font-bold flex items-center justify-center border-2 border-white shadow-sm">0</span>
+        </a>
+        <a class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[#7f4a3a] text-white hover:bg-[#6a3a2a] text-sm font-medium transition-all duration-300 shadow-sm hover:scale-105 active:scale-95" href="carrinho.html">
+          Ver Carrinho
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content: CARDÁPIO COMPLETO DE SERVIÇOS & CUIDADOS INTEGRADOS -->
+  <main class="flex-1 pb-24">
+    <!-- Breadcrumb e Apresentação do Cardápio -->
+    <div class="max-w-[1280px] mx-auto px-6 md:px-12 pt-10 pb-4">
+      <div class="flex items-center gap-2 text-sm text-[#52443f]/80 mb-3">
+        <a href="index.html" class="hover:text-primary transition-colors">Início</a>
+        <span>/</span>
+        <span class="text-primary font-medium">Serviços &amp; Preços</span>
+      </div>
+    </div>
+
+    <section class="w-full py-space-3xl lg:py-space-4xl bg-surface" id="cardapio">
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="flex flex-col items-center text-center mb-space-2xl reveal-fade-up">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold mb-space-2xs">Menu Transparente</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface max-w-2xl">
+          Cardápio de Serviços &amp; Cuidados Integrados
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-space-xs">
+          Preços justos, horários pontuais e produtos selecionados. Escolha a sua categoria favorita e agende facilmente.
+        </p>
+<!-- Category Filter Tabs -->
+<div class="flex flex-wrap justify-center gap-space-xs mt-space-lg" id="serviceTabs">
+<button class="category-btn px-space-md py-space-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md transition-all duration-300 shadow-sm hover:scale-105 active:scale-95 cursor-pointer" data-cat="all">
+            Todos os Serviços
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="depilacao">
+            Depilação Humanizada
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="skincare">
+            Skincare &amp; Corporal
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="cachos">
+            Cachos &amp; Curvaturas
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="penteados">
+            Penteados &amp; Makes
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="masculino">
+            Homens &amp; Sobrancelhas
+          </button>
+</div>
+</div>
+<!-- Services Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="servicesGrid">
+<!-- CATEGORIA 1: DEPILAÇÃO -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Depilação Facial</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 15 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Buço ou Queixo com Cera Resinada</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Aplicação delicada com cera hipoalergênica resinada calmante. Sem ardência ou vermelhidão excessiva.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 25</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Buço ou Queixo">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Depilação Corporal</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 20 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Axilas + Argiloterapia Pós</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Remoção suave seguida de máscara de argila branca botânica para clarear e acalmar a região imediatamente.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 38</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Axilas com Argiloterapia">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between relative overflow-hidden group" data-service-cat="depilacao">
+<div class="absolute top-0 right-0 bg-primary text-on-primary font-label-sm text-label-sm px-space-md py-space-2xs rounded-bl-lg shadow-sm">Destaque Sem Dor</div>
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Íntima Humanizada</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 35 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Virilha Completa com Anestésico Natural</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Método exclusivo com cera quente elástica à base de camomila e calêndula. Toque suave sem puxão brusco.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 75</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Virilha Completa Humanizada">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Pernas</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 30 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Meia Perna ou Perna Inteira</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Aplicação em roll-on aquecido com hidratação finalizadora de melaleuca e óleo de amêndoas.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">a partir R$ 45</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Depilação Perna">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<!-- CATEGORIA 2: SKINCARE & ESTÉTICA CORPORAL -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="skincare">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Limpeza Facial</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 75 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Limpeza de Pele Profunda + LEDterapia</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Vapor de ozônio, extração indolor de cravos, alta frequência e LED azul cicatrizante para poros limpos e luminosos.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 130</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Limpeza de Pele Profunda">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="skincare">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Ritual Corporal</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 45 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Banho de Lua Dourado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Descoloração ultra suave e protetora dos pelos com aplicação prévia de óleos vegetais e esfoliação aromática.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 90</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Banho de Lua Dourado">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="skincare">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Renovação Celular</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 50 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Peeling de Diamante Revitalizante</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Microdermoabrasão controlada para suavizar manchas leves, linhas de expressão e uniformizar o tom da pele facial.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 110</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Peeling de Diamante">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<!-- CATEGORIA 3: CABELOS CACHEADOS -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between relative overflow-hidden group" data-service-cat="cachos">
+<div class="absolute top-0 right-0 bg-secondary text-on-secondary font-label-sm text-label-sm px-space-md py-space-2xs rounded-bl-lg shadow-sm">2A a 4C</div>
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Corte Especializado</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 60 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Corte a Seco Estruturado para Cachos</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Técnica fio a fio no caimento real das suas mechas. Respeita o fator encolhimento e desenha o volume dos seus sonhos.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 120</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Corte a Seco em Cachos">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="cachos">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Nutrição Botânica</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 80 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Cronograma Capilar &amp; Fitagem Fita</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Higienização no-poo/low-poo, máscara com manteiga de murumuru e finalização com fitagem detalhada para ultra definição.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 140</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Cronograma Capilar e Fitagem">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="cachos">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Saúde do Couro</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 70 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Terapia Capilar &amp; Controle de Queda</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Desintoxicação do bulbo capilar com óleos essenciais ozonizados, massagem craniana revigorante e alta frequência.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 160</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Terapia Capilar">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<!-- CATEGORIA 4: PENTEADOS & ESTILIZAÇÃO -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="penteados">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Linha Infantil Afetiva</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 50 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Penteados Artísticos Infantis</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tranças nagô decoradas com tererês, laços e finalização mágica sem puxões, com ambiente lúdico e seguro para os pequenos.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 85</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Penteado Infantil">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="penteados">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Eventos &amp; Festas</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 75 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Penteado Festa &amp; Coque Orgânico</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Estilização sofisticada valorizando cachos naturais, mechas soltas com frescor moderno para noivas, madrinhas e formandas.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 150</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Penteado Festa">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="penteados">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Make Natural Glow</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 60 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Maquiagem Social Leve &amp; Duradoura</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pele acetinada sem aspecto pesado de reboco. Realce dos traços naturais com cosméticos orgânicos e fixação de até 12 horas.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 140</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Maquiagem Social">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<!-- CATEGORIA 5: MASCULINO & SOBRANCELHAS -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="masculino">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Masculino</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 25 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Design Masculino Alinhado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Limpeza estratégica entre sobrancelhas e contorno sem afinar nem feminilizar. Visual limpo, viril e elegante.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 40</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Design Masculino">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="masculino">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Design &amp; Pigmento</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 35 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Design com Henna Efeito Sombra</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Visagismo personalizado com pigmentação botânica de alta fixação que preenche falhas sem efeito artificial.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 55</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Design com Henna">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="masculino">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Cuidados com a Barba</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 35 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Alinhamento de Barba + Sobrancelhas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Contorno de barba com toalha quente aromática, hidratação com bálsamo vegetal e ajuste minucioso do olhar.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 65</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Barba e Sobrancelhas">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+
+  <!-- Bottom Button to Go to Cart -->
+  <div class="col-span-full mt-space-2xl text-center flex flex-col items-center justify-center gap-3">
+    <a href="carrinho.html" id="btn-main-go-cart" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary hover:bg-primary-container text-on-primary font-serif text-lg font-medium shadow-xl hover:scale-105 active:scale-95 transition-all">
+      <span class="material-symbols-outlined text-2xl">shopping_bag</span>
+      <span id="btn-main-cart-text">Ir para o Carrinho &amp; Agendar Horário</span>
+      <span class="material-symbols-outlined text-xl">arrow_forward</span>
+    </a>
+    <p class="text-xs text-on-surface-variant">Você poderá escolher a data, o horário de início e a forma de pagamento no carrinho.</p>
+  </div>
+
+</div>
+</div>
+</section>
+
+  </main>
+
+  
+<!-- Persistent Floating Cart Bar (Appears when items are in cart) -->
+<div id="sticky-cart-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-[#FAF7F2]/95 backdrop-blur-md border-t border-[#E8DDD2] shadow-2xl py-3 px-6 transition-all duration-300 translate-y-full opacity-0">
+  <div class="max-w-[1280px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+    <div class="flex items-center gap-3.5">
+      <div class="w-10 h-10 rounded-full bg-[#7f4a3a] text-white flex items-center justify-center font-bold text-sm shadow-sm">
+        <span id="bar-cart-count">0</span>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-[#2C2320]" id="bar-cart-text">0 procedimentos selecionados</p>
+        <p class="text-xs text-[#52443f]" id="bar-cart-subtext">Selecione mais serviços ou finalize seu agendamento</p>
+      </div>
+    </div>
+    <a href="carrinho.html" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#7f4a3a] hover:bg-[#6a3a2a] text-white text-sm font-semibold shadow-md hover:scale-105 active:scale-95 transition-all">
+      <span>Ver Carrinho &amp; Agendar Horário</span>
+      <span class="material-symbols-outlined text-lg">arrow_forward</span>
+    </a>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <footer class="w-full bg-surface-container-low border-t border-[#E8DDD2]">
+    <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop py-space-3xl">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-space-2xl">
+        <div class="md:col-span-5 flex flex-col gap-space-sm">
+          <div class="flex items-center gap-space-sm">
+            <span class="font-headline-md text-headline-md text-primary font-serif">Atelier Botânico &amp; Cachos</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md leading-relaxed">
+            Santuário botânico de estética integrativa, curvaturas naturais e cuidado regenerativo para todas as gerações da família. Uma experiência sensorial com toque gentil e maestria clínica.
+          </p>
+        </div>
+        <div class="md:col-span-3 flex flex-col gap-space-xs">
+          <span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Navegação Rápida</span>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-1" href="index.html">Página Inicial</a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-1" href="sobre.html">Quem Somos (Nossa História)</a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-1 font-semibold text-primary" href="servicos.html">Cardápio de Serviços &amp; Preços</a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-1" href="carrinho.html">Meu Carrinho &amp; Agendamento</a>
+        </div>
+        <div class="md:col-span-4 flex flex-col gap-space-xs">
+          <span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Atendimento &amp; Endereço</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Terça a Sábado: 08:30 às 19:00</p>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Av. das Palmeiras, 1420 - São Paulo, SP</p>
+          <p class="font-body-sm text-body-sm text-secondary font-semibold mt-2">WhatsApp: (11) 98765-4321</p>
+        </div>
+      </div>
+      <div class="pt-space-md border-t border-surface-container flex flex-col md:flex-row items-center justify-between text-body-sm text-on-surface-variant text-xs">
+        <p>© 2026 Espaço Ruth Ribeiro — Atelier Botânico &amp; Cachos. Todos os direitos reservados.</p>
+        <p class="mt-2 md:mt-0">Preços transparentes, acolhimento sem pressa e biossegurança garantida.</p>
+      </div>
+    </div>
+  </footer>
+
+  
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Category Filter tabs
+  const filterButtons = document.querySelectorAll('.category-btn');
+  const serviceCards = document.querySelectorAll('.service-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.getAttribute('data-cat');
+      filterButtons.forEach(btn => {
+        btn.classList.remove('bg-secondary', 'text-on-secondary', 'shadow-sm');
+        btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+      });
+      button.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+      button.classList.add('bg-secondary', 'text-on-secondary', 'shadow-sm');
+
+      serviceCards.forEach(card => {
+        const cardCat = card.getAttribute('data-service-cat');
+        if (category === 'all' || cardCat === category) {
+          card.style.display = 'flex';
+          requestAnimationFrame(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          });
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            if (card.style.opacity === '0') card.style.display = 'none';
+          }, 200);
+        }
+      });
+    });
+  });
+
+  // Helper: Cart management in localStorage
+  function getCart() {
+    try {
+      const stored = localStorage.getItem('ruth_ribeiro_cart');
+      return stored ? JSON.parse(stored) : [];
+    } catch(e) {
+      return [];
+    }
+  }
+
+  function saveCart(cart) {
+    localStorage.setItem('ruth_ribeiro_cart', JSON.stringify(cart));
+    updateCartUI();
+  }
+
+  function updateCartUI() {
+    const cart = getCart();
+    const count = cart.length;
+    
+    // Update header badges
+    document.querySelectorAll('.global-cart-badge').forEach(b => b.textContent = count);
+
+    // Update bottom button text
+    const bottomBtnText = document.getElementById('btn-main-cart-text');
+    if (bottomBtnText) {
+      if (count > 0) {
+        const total = cart.reduce((sum, i) => sum + (Number(i.price) || 0), 0);
+        bottomBtnText.textContent = `Ver Carrinho (${count} ${count === 1 ? 'item' : 'itens'} — R$ ${total})`;
+      } else {
+        bottomBtnText.textContent = 'Ir para o Carrinho & Agendar Horário';
+      }
+    }
+
+    // Update floating bar
+    const floatingBar = document.getElementById('sticky-cart-bar');
+    if (floatingBar) {
+      if (count > 0) {
+        floatingBar.classList.remove('translate-y-full', 'opacity-0');
+        floatingBar.classList.add('translate-y-0', 'opacity-100');
+        const barCount = document.getElementById('bar-cart-count');
+        const barText = document.getElementById('bar-cart-text');
+        const barSubtext = document.getElementById('bar-cart-subtext');
+        const total = cart.reduce((sum, i) => sum + (Number(i.price) || 0), 0);
+        const totalMin = cart.reduce((sum, i) => sum + (Number(i.duration) || 0), 0);
+        const hours = Math.floor(totalMin / 60);
+        const min = totalMin % 60;
+        const timeFormatted = hours > 0 ? `${hours}h ${min > 0 ? min + 'min' : ''}` : `${min}min`;
+
+        if (barCount) barCount.textContent = count;
+        if (barText) barText.textContent = `${count} ${count === 1 ? 'procedimento selecionado' : 'procedimentos selecionados'}`;
+        if (barSubtext) barSubtext.textContent = `Total estimado: R$ ${total} • ${timeFormatted}`;
+      } else {
+        floatingBar.classList.add('translate-y-full', 'opacity-0');
+        floatingBar.classList.remove('translate-y-0', 'opacity-100');
+      }
+    }
+  }
+
+  // Toast feedback
+  function showToast(msg) {
+    let toast = document.getElementById('cart-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'cart-toast';
+      toast.className = 'fixed bottom-20 sm:bottom-24 right-6 z-50 bg-[#2C2320] text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 border border-[#54624f] transition-all duration-300';
+      toast.innerHTML = '<span class="material-symbols-outlined text-[#d8e7cf]">check_circle</span><span id="toast-text" class="text-sm font-medium"></span>';
+      document.body.appendChild(toast);
+    }
+    const toastText = document.getElementById('toast-text');
+    if (toastText) toastText.textContent = msg;
+    toast.style.display = 'flex';
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateY(0)';
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(10px)';
+      setTimeout(() => toast.style.display = 'none', 300);
+    }, 2800);
+  }
+
+  // 2. Click handler on each card's "Reservar" button
+  serviceCards.forEach(card => {
+    const btn = card.querySelector('.btn-reservar-card');
+    const titleEl = card.querySelector('h3');
+    const priceEl = card.querySelector('.border-t span.font-headline-sm');
+    const durationEl = card.querySelector('.material-symbols-outlined[textContent="schedule"]') || card.querySelector('span[class*="body-sm"]');
+    const catBadge = card.querySelector('span[class*="label-sm"]');
+
+    if (btn && titleEl && priceEl) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const name = titleEl.textContent.trim();
+        const priceMatch = priceEl.textContent.match(/\d+/);
+        const price = priceMatch ? parseInt(priceMatch[0]) : 50;
+        
+        let duration = 30;
+        const text = card.textContent;
+        const timeMatch = text.match(/(\d+)\s*min/);
+        if (timeMatch) duration = parseInt(timeMatch[1]);
+
+        const category = catBadge ? catBadge.textContent.trim() : 'Atelier';
+
+        const cart = getCart();
+        cart.push({
+          id: 'srv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
+          name,
+          category,
+          duration,
+          price
+        });
+
+        saveCart(cart);
+
+        // Visual feedback on the button
+        const originalText = btn.innerHTML;
+        btn.classList.remove('bg-surface-container-high', 'text-on-surface', 'hover:bg-primary');
+        btn.classList.add('bg-[#54624f]', 'text-white', 'shadow-md');
+        btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span><span>✓ Adicionado</span>';
+
+        showToast(`"${name}" foi adicionado ao carrinho!`);
+
+        setTimeout(() => {
+          btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">add</span><span>+ Outro</span>';
+          btn.classList.remove('bg-[#54624f]', 'text-white');
+          btn.classList.add('bg-surface-container-high', 'text-on-surface');
+        }, 2200);
+      });
+    }
+  });
+
+  updateCartUI();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<section class="w-full py-space-3xl lg:py-space-4xl bg-surface" id="cardapio">
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="flex flex-col items-center text-center mb-space-2xl reveal-fade-up">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold mb-space-2xs">Menu Transparente</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface max-w-2xl">
+          Cardápio de Serviços &amp; Cuidados Integrados
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-space-xs">
+          Preços justos, horários pontuais e produtos selecionados. Escolha a sua categoria favorita e agende facilmente.
+        </p>
+<!-- Category Filter Tabs -->
+<div class="flex flex-wrap justify-center gap-space-xs mt-space-lg" id="serviceTabs">
+<button class="category-btn px-space-md py-space-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md transition-all duration-300 shadow-sm hover:scale-105 active:scale-95 cursor-pointer" data-cat="all">
+            Todos os Serviços
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="depilacao">
+            Depilação Humanizada
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="skincare">
+            Skincare &amp; Corporal
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="cachos">
+            Cachos &amp; Curvaturas
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="penteados">
+            Penteados &amp; Makes
+          </button>
+<button class="category-btn px-space-md py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer" data-cat="masculino">
+            Homens &amp; Sobrancelhas
+          </button>
+</div>
+</div>
+<!-- Services Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="servicesGrid">
+<!-- CATEGORIA 1: DEPILAÇÃO -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Depilação Facial</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 15 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Buço ou Queixo com Cera Resinada</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Aplicação delicada com cera hipoalergênica resinada calmante. Sem ardência ou vermelhidão excessiva.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 25</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Buço%20ou%20Queixo">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Depilação Corporal</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 20 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Axilas + Argiloterapia Pós</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Remoção suave seguida de máscara de argila branca botânica para clarear e acalmar a região imediatamente.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 38</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Axilas%20com%20Argiloterapia">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between relative overflow-hidden group" data-service-cat="depilacao">
+<div class="absolute top-0 right-0 bg-primary text-on-primary font-label-sm text-label-sm px-space-md py-space-2xs rounded-bl-lg shadow-sm">Destaque Sem Dor</div>
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Íntima Humanizada</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 35 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Virilha Completa com Anestésico Natural</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Método exclusivo com cera quente elástica à base de camomila e calêndula. Toque suave sem puxão brusco.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 75</span>
+<a class="shine-hover px-space-md py-space-xs rounded-lg bg-primary text-on-primary hover:bg-primary-container font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Virilha%20Completa%20Humanizada">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Pernas</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 30 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Meia Perna ou Perna Inteira</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Aplicação em roll-on aquecido com hidratação finalizadora de melaleuca e óleo de amêndoas.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">a partir R$ 45</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Depilação%20Perna">Reservar</a>
+</div>
+</div>
+<!-- CATEGORIA 2: SKINCARE & ESTÉTICA CORPORAL -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="skincare">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Limpeza Facial</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 75 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Limpeza de Pele Profunda + LEDterapia</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Vapor de ozônio, extração indolor de cravos, alta frequência e LED azul cicatrizante para poros limpos e luminosos.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 130</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Limpeza%20de%20Pele%20Profunda">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="skincare">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Ritual Corporal</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 45 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Banho de Lua Dourado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Descoloração ultra suave e protetora dos pelos com aplicação prévia de óleos vegetais e esfoliação aromática.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 90</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Banho%20de%20Lua%20Dourado">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="skincare">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Renovação Celular</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 50 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Peeling de Diamante Revitalizante</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Microdermoabrasão controlada para suavizar manchas leves, linhas de expressão e uniformizar o tom da pele facial.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 110</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Peeling%20de%20Diamante">Reservar</a>
+</div>
+</div>
+<!-- CATEGORIA 3: CABELOS CACHEADOS -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between relative overflow-hidden group" data-service-cat="cachos">
+<div class="absolute top-0 right-0 bg-secondary text-on-secondary font-label-sm text-label-sm px-space-md py-space-2xs rounded-bl-lg shadow-sm">2A a 4C</div>
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Corte Especializado</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 60 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Corte a Seco Estruturado para Cachos</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Técnica fio a fio no caimento real das suas mechas. Respeita o fator encolhimento e desenha o volume dos seus sonhos.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 120</span>
+<a class="shine-hover px-space-md py-space-xs rounded-lg bg-primary text-on-primary hover:bg-primary-container font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Corte%20a%20Seco%20em%20Cachos">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="cachos">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Nutrição Botânica</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 80 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Cronograma Capilar &amp; Fitagem Fita</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Higienização no-poo/low-poo, máscara com manteiga de murumuru e finalização com fitagem detalhada para ultra definição.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 140</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Cronograma%20Capilar%20e%20Fitagem">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="cachos">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Saúde do Couro</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 70 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Terapia Capilar &amp; Controle de Queda</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Desintoxicação do bulbo capilar com óleos essenciais ozonizados, massagem craniana revigorante e alta frequência.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 160</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Terapia%20Capilar">Reservar</a>
+</div>
+</div>
+<!-- CATEGORIA 4: PENTEADOS & ESTILIZAÇÃO -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="penteados">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Linha Infantil Afetiva</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 50 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Penteados Artísticos Infantis</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tranças nagô decoradas com tererês, laços e finalização mágica sem puxões, com ambiente lúdico e seguro para os pequenos.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 85</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Penteado%20Infantil">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="penteados">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Eventos &amp; Festas</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 75 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Penteado Festa &amp; Coque Orgânico</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Estilização sofisticada valorizando cachos naturais, mechas soltas com frescor moderno para noivas, madrinhas e formandas.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 150</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Penteado%20Festa">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="penteados">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Make Natural Glow</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 60 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Maquiagem Social Leve &amp; Duradoura</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pele acetinada sem aspecto pesado de reboco. Realce dos traços naturais com cosméticos orgânicos e fixação de até 12 horas.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 140</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Maquiagem%20Social">Reservar</a>
+</div>
+</div>
+<!-- CATEGORIA 5: MASCULINO & SOBRANCELHAS -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="masculino">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Masculino</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 25 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Design Masculino Alinhado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Limpeza estratégica entre sobrancelhas e contorno sem afinar nem feminilizar. Visual limpo, viril e elegante.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 40</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Design%20Masculino">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="masculino">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Design &amp; Pigmento</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 35 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Design com Henna Efeito Sombra</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Visagismo personalizado com pigmentação botânica de alta fixação que preenche falhas sem efeito artificial.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 55</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Design%20com%20Henna">Reservar</a>
+</div>
+</div>
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="masculino">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Cuidados com a Barba</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 35 min
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Alinhamento de Barba + Sobrancelhas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Contorno de barba com toalha quente aromática, hidratação com bálsamo vegetal e ajuste minucioso do olhar.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 65</span>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95" href="https://wa.me/5511987654321?text=Gostaria%20de%20agendar:%20Barba%20e%20Sobrancelhas">Reservar</a>
+</div>
+</div>
+</div>
+</div>
+</section>

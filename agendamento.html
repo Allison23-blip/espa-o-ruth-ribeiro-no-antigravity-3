@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agendamento | Espaço Ruth Ribeiro — Atelier Botânico &amp; Cachos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#86503f",
+            "surface-variant": "#e5e2dd",
+            "surface-bright": "#fcf9f4",
+            "on-primary-container": "#fff3f0",
+            "inverse-on-surface": "#f3f0eb",
+            "surface-container-highest": "#e5e2dd",
+            "tertiary-fixed": "#ffdbcf",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#bccbb4",
+            "primary": "#7f4a3a",
+            "tertiary-container": "#976452",
+            "primary-fixed-dim": "#fcb6a0",
+            "surface-container-low": "#f6f3ee",
+            "primary-container": "#9b6250",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed": "#121f10",
+            "error": "#ba1a1a",
+            "on-surface": "#1c1c19",
+            "on-tertiary-fixed-variant": "#673b2b",
+            "on-secondary-fixed-variant": "#3d4a39",
+            "on-primary-fixed-variant": "#6a3a2a",
+            "surface-container": "#f0ede9",
+            "surface-container-high": "#ebe8e3",
+            "tertiary": "#7b4c3b",
+            "on-tertiary-fixed": "#331205",
+            "outline": "#84736e",
+            "on-background": "#1c1c19",
+            "secondary-fixed": "#d8e7cf",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#31302d",
+            "background": "#fcf9f4",
+            "primary-fixed": "#ffdbd0",
+            "surface": "#fcf9f4",
+            "surface-dim": "#dcdad5",
+            "inverse-primary": "#fcb6a0",
+            "on-surface-variant": "#52443f",
+            "on-secondary-container": "#586753",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#d7c2bc",
+            "error-container": "#ffdad6",
+            "secondary": "#54624f",
+            "on-tertiary-container": "#fff3f0",
+            "tertiary-fixed-dim": "#f7b8a2",
+            "on-primary-fixed": "#351004",
+            "secondary-container": "#d5e4cc",
+            
+            // Custom Brand Colors based on brief (mapping them to tailwind arbitrary values for ease if needed, but sticking to design system tokens primarily)
+            "creme-alabastro": "#FAF7F2",
+            "nude-aveia": "#F3ECE2",
+            "border-subtle": "#E8DDD2",
+            "rosa-queimado": "#C48B77",
+            "salvia": "#52604D"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px",
+            "card": "16px"
+          },
+          "spacing": {
+            "container-max-width": "1280px",
+            "gutter": "24px",
+            "margin-mobile": "20px",
+            "section-gap": "120px",
+            "unit": "8px",
+            "margin-desktop": "64px"
+          },
+          "fontFamily": {
+            "display-lg": ["Playfair Display"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "caption": ["Plus Jakarta Sans"],
+            "headline-sm": ["Playfair Display"],
+            "display-lg-mobile": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+            "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+            "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "1.2", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { background-color: #FAF7F2; } /* Creme Alabastro */
+    .btn-shine {
+        position: relative;
+        overflow: hidden;
+    }
+    .btn-shine::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+        transform: skewX(-25deg);
+        animation: shine 3s infinite;
+    }
+    @keyframes shine {
+        0% { left: -100%; }
+        20% { left: 200%; }
+        100% { left: 200%; }
+    }
+    /* Hide scrollbar for horizontal scrolling areas */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+  </style>
+</head>
+<body class="text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-white">
+<!-- TopNavBar (Shared Component JSON) -->
+<header class="sticky top-0 z-50 w-full bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E8DDD2] transition-all duration-300">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+    <a class="flex items-center gap-3 group" href="index.html">
+      <img alt="Logo Atelier Botânico &amp; Cachos" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="assets/images/logo_atelier.png">
+      <span class="font-serif text-xl text-[#7f4a3a] tracking-tight font-medium">Atelier Botânico &amp; Cachos</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-6">
+      <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="index.html">Início</a>
+      <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="sobre.html">Quem Somos</a>
+      <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="servicos.html">Serviços &amp; Preços</a>
+      <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="index.html#galeria">Antes e Depois</a>
+      <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="index.html#depoimentos">Depoimentos</a>
+      <a class="transition-all duration-200 text-sm font-medium text-[#52443f] hover:text-[#7f4a3a]" href="index.html#localizacao">Localização</a>
+    </nav>
+    <div class="flex items-center gap-3.5">
+      <!-- Carrinho Button with Dynamic Badge -->
+      <a href="carrinho.html" class="relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#f3ece2] text-[#7f4a3a] hover:bg-[#e8ddd2] transition-all hover:scale-105 active:scale-95 shadow-sm" title="Meu Carrinho de Procedimentos">
+        <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+        <span class="global-cart-badge absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#7f4a3a] text-white text-[11px] font-bold flex items-center justify-center border-2 border-white shadow-sm">0</span>
+      </a>
+      <a class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#54624f] text-white text-xs font-semibold tracking-wide uppercase transition-all duration-300 shadow-sm hover:scale-105 active:scale-95" href="carrinho.html">
+        Agendar Horário
+      </a>
+    </div>
+  </div>
+</header>
+<main class="pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto">
+<!-- Hero Section -->
+<div class="text-center mb-16 md:mb-24">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-8">Reserve seu Momento de Cuidado</h1>
+<!-- Stepper -->
+<div class="flex items-center justify-center max-w-3xl mx-auto px-4">
+<div class="flex items-center w-full justify-between relative">
+<!-- Track -->
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-border-subtle -z-10 -translate-y-1/2"></div>
+<!-- Step 1 (Active) -->
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center font-label-md text-label-md shadow-[0_4px_20px_rgba(155,98,80,0.2)]">1</div>
+<span class="font-label-md text-label-md text-primary hidden sm:block">Serviço</span>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-md text-label-md border border-border-subtle">2</div>
+<span class="font-label-md text-label-md text-on-surface-variant hidden sm:block">Especialista</span>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-md text-label-md border border-border-subtle">3</div>
+<span class="font-label-md text-label-md text-on-surface-variant hidden sm:block">Data &amp; Horário</span>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-md text-label-md border border-border-subtle">4</div>
+<span class="font-label-md text-label-md text-on-surface-variant hidden sm:block">Seus Dados</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Layout (2-columns) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column (Interactive Canvas) -->
+<div class="lg:col-span-8 flex flex-col gap-12">
+<!-- Filter Chips -->
+<section>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-6">1. Escolha a Categoria</h2>
+<div class="flex flex-wrap gap-3">
+<button class="px-4 py-2 rounded-full bg-primary-container text-white font-label-md text-label-md transition-colors hover:bg-surface-tint">Todos</button>
+<button class="px-4 py-2 rounded-full bg-rosa-queimado/15 text-primary-container font-label-md text-label-md transition-colors hover:bg-rosa-queimado/25">Cachos</button>
+<button class="px-4 py-2 rounded-full bg-rosa-queimado/15 text-primary-container font-label-md text-label-md transition-colors hover:bg-rosa-queimado/25">Depilação</button>
+<button class="px-4 py-2 rounded-full bg-rosa-queimado/15 text-primary-container font-label-md text-label-md transition-colors hover:bg-rosa-queimado/25">Terapias Capilares</button>
+<button class="px-4 py-2 rounded-full bg-rosa-queimado/15 text-primary-container font-label-md text-label-md transition-colors hover:bg-rosa-queimado/25">Design de Sobrancelhas</button>
+</div>
+</section>
+<!-- Service Cards -->
+<section>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-6">Serviços Disponíveis</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Card 1 (Selected State) -->
+<div class="bg-white rounded-card border-2 border-primary-container p-6 cursor-pointer relative shadow-[0_8px_24px_rgba(155,98,80,0.08)] transition-all">
+<div class="absolute top-4 right-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-sm text-on-surface mb-2 pr-6">Corte a Seco Estruturado</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Técnica especializada para cabelos com curvatura, respeitando o caimento natural dos fios.</p>
+<div class="flex items-end justify-between mt-auto">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span> 60 min
+                </span>
+<span class="font-headline-sm text-headline-sm text-primary-container">R$ 120</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-card border border-border-subtle p-6 cursor-pointer hover:border-primary-container/50 transition-all group">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-border-subtle">add_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-sm text-on-surface mb-2">Depilação Virilha Nobre</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Uso de cera orgânica morna, focada em peles sensíveis, com finalização calmante botânica.</p>
+<div class="flex items-end justify-between mt-auto">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span> 45 min
+                </span>
+<span class="font-headline-sm text-headline-sm text-on-surface">R$ 75</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-card border border-border-subtle p-6 cursor-pointer hover:border-primary-container/50 transition-all group">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-border-subtle">add_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-sm text-on-surface mb-2">Tratamento Cronograma</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Avaliação do fio e aplicação de máscara rica em ativos botânicos (hidratação, nutrição ou reconstrução).</p>
+<div class="flex items-end justify-between mt-auto">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span> 90 min
+                </span>
+<span class="font-headline-sm text-headline-sm text-on-surface">R$ 150</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column (Sticky Summary) -->
+<div class="lg:col-span-4 relative">
+<div class="sticky top-28 bg-white rounded-card border border-border-subtle p-6 shadow-[0_12px_40px_rgba(155,98,80,0.05)]">
+<h3 class="font-headline-sm text-headline-sm text-primary border-b border-border-subtle pb-4 mb-6">Resumo do Agendamento</h3>
+<div class="flex flex-col gap-4 mb-8">
+<!-- Line Item -->
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Corte a Seco Estruturado</span>
+<span class="font-caption text-caption text-on-surface-variant">Ruth Ribeiro • 60 min</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">R$ 120</span>
+</div>
+<div class="border-t border-dashed border-border-subtle"></div>
+<!-- Total -->
+<div class="flex justify-between items-center mt-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Total Previsto</span>
+<span class="font-headline-md text-headline-md text-primary-container">R$ 120</span>
+</div>
+</div>
+<button class="w-full bg-primary-container text-white font-label-md text-label-md py-4 px-6 rounded-lg flex items-center justify-center gap-2 btn-shine hover:bg-surface-tint transition-colors mb-6 shadow-[0_4px_14px_rgba(155,98,80,0.3)]">
+            Confirmar via WhatsApp
+            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Trust Badges -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3 bg-nude-aveia/50 p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">free_cancellation</span>
+<span class="font-caption text-caption text-on-surface-variant">Cancelamento grátis até 24h antes</span>
+</div>
+<div class="flex items-center gap-3 bg-nude-aveia/50 p-3 rounded-lg">
+<span class="material-symbols-outlined text-[#52604D]" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-caption text-caption text-on-surface-variant">Ambiente 100% Biosseguro e Sustentável</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component JSON) -->
+<footer class="bg-surface-container dark:bg-surface-container-highest w-full py-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max-width mx-auto">
+<!-- Brand & Hours -->
+<div class="md:col-span-1 flex flex-col gap-6">
+<span class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim">Botanica Atelier</span>
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-on-surface dark:text-on-surface-variant">Horário de Funcionamento</span>
+<span class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant">Terça a Sábado<br/>08:30 - 19:00</span>
+</div>
+</div>
+<!-- Links -->
+<div class="md:col-span-3 flex flex-wrap gap-8 md:justify-end items-start pt-2">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors ease-in-out duration-200" href="#">Privacidade</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors ease-in-out duration-200" href="#">Termos de Uso</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors ease-in-out duration-200" href="#">Cuidados Botânicos</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors ease-in-out duration-200" href="#">Carreiras</a>
+</div>
+<!-- Copyright -->
+<div class="md:col-span-4 mt-12 pt-8 border-t border-outline-variant/30 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant">© 2024 Botanica Atelier de Beleza. Todos os direitos reservados.</p>
+</div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  let selectedService = {
+    name: "Corte a Seco Estruturado",
+    time: "60 min",
+    price: 120
+  };
+
+  const serviceCards = document.querySelectorAll('.rounded-card');
+  const summaryTitle = document.querySelector('.lg\\:col-span-4 .font-label-md.text-on-surface');
+  const summaryTime = document.querySelector('.lg\\:col-span-4 .font-caption.text-on-surface-variant');
+  const summaryPrice = document.querySelector('.lg\\:col-span-4 span.font-label-md:last-of-type');
+  const summaryTotal = document.querySelector('.lg\\:col-span-4 .font-headline-md.text-primary-container');
+  const whatsappBtn = document.querySelector('button.btn-shine') || document.querySelector('.lg\\:col-span-4 button');
+
+  // Interactive Card Selection
+  serviceCards.forEach(card => {
+    const titleEl = card.querySelector('h3');
+    const priceEl = card.querySelector('.font-headline-sm:last-child');
+    const timeEl = card.querySelector('.font-label-md span') ? card.querySelector('.font-label-md') : null;
+
+    if (titleEl && priceEl) {
+      card.addEventListener('click', () => {
+        // Deselect all
+        serviceCards.forEach(c => {
+          c.classList.remove('border-2', 'border-primary-container', 'shadow-[0_8px_24px_rgba(155,98,80,0.08)]');
+          c.classList.add('border', 'border-border-subtle');
+          const check = c.querySelector('.material-symbols-outlined');
+          if (check && (check.textContent.includes('check_circle') || check.textContent.includes('add_circle'))) {
+            check.textContent = 'add_circle';
+            check.classList.remove('text-primary-container');
+            check.classList.add('text-border-subtle');
+          }
+        });
+
+        // Select clicked
+        card.classList.remove('border', 'border-border-subtle');
+        card.classList.add('border-2', 'border-primary-container', 'shadow-[0_8px_24px_rgba(155,98,80,0.08)]');
+        const check = card.querySelector('.material-symbols-outlined');
+        if (check) {
+          check.textContent = 'check_circle';
+          check.classList.remove('text-border-subtle');
+          check.classList.add('text-primary-container');
+        }
+
+        const title = titleEl.textContent.trim();
+        const priceText = priceEl.textContent.replace('R</html>, '').trim();
+        const price = parseInt(priceText) || 120;
+        const time = timeEl ? timeEl.textContent.replace('schedule', '').trim() : "60 min";
+
+        selectedService = { name: title, time, price };
+
+        // Update Summary
+        if (summaryTitle) summaryTitle.textContent = title;
+        if (summaryTime) summaryTime.textContent = 'Ruth Ribeiro • ' + time;
+        if (summaryPrice) summaryPrice.textContent = 'R$ ' + price;
+        if (summaryTotal) summaryTotal.textContent = 'R$ ' + price;
+      });
+    }
+  });
+
+  // Category filter buttons
+  const filterButtons = document.querySelectorAll('section:first-of-type button');
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => {
+        b.classList.remove('bg-primary-container', 'text-white');
+        b.classList.add('bg-rosa-queimado/15', 'text-primary-container');
+      });
+      btn.classList.remove('bg-rosa-queimado/15', 'text-primary-container');
+      btn.classList.add('bg-primary-container', 'text-white');
+    });
+  });
+
+  // WhatsApp button redirect
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const message = encodeURIComponent(`Olá! Gostaria de agendar no Espaço Ruth Ribeiro (Atelier Botânico):\n\nProcedimento: ${selectedService.name}\nDuração: ${selectedService.time}\nValor estimado: R$ ${selectedService.price}\n\nPoderiam me informar os horários livres?`);
+      window.open(`https://wa.me/5511987654321?text=${message}`, '_blank');
+    });
+  }
+});
+</script>
+
+
+<script>
+  (function() {
+    function updateHeaderBadge() {
+      try {
+        const stored = localStorage.getItem('ruth_ribeiro_cart');
+        const cart = stored ? JSON.parse(stored) : [];
+        document.querySelectorAll('.global-cart-badge').forEach(b => {
+          b.textContent = cart.length;
+        });
+      } catch (e) {}
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateHeaderBadge);
+    } else {
+      updateHeaderBadge();
+    }
+  })();
+</script>
+
+</body></html>

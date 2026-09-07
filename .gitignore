@@ -1,0 +1,15 @@
+# MCP configs (contêm chaves de API)
+mcp_config.json
+.agents/mcp_config.json
+
+# Dependências
+node_modules/
+
+# Logs e arquivos de sistema
+*.log
+.DS_Store
+Thumbs.db
+
+# Ambientes / chaves locais
+.env
+.env.local

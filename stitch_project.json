@@ -1,0 +1,254 @@
+{
+  "name": "projects/4492485437438582406",
+  "title": "Espaço Estética e Beleza Multi-Serviços",
+  "visibility": "PRIVATE",
+  "createTime": "2026-09-07T18:06:21.518144Z",
+  "updateTime": "2026-09-07T18:22:44.272632Z",
+  "projectType": "TEXT_TO_UI_PRO",
+  "thumbnailScreenshot": {
+    "name": "projects/4492485437438582406/screens/7f6feedb48fc45fab359c842f0a4de8f/fileEntries/screenshot",
+    "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1UdgZEZ02XQf2S9NSn70fCPqC8SwkFW45GhmDDlE1HDab6ZmrAIHuEHdd5xeKKsYH4tq0bnzOcPwb5NOlX6p9r2R1qEjBHvkblQvp-4VFayvKmTmm_L4VcmT5v5fSXhslZsNjlmoU6YSQxD6j0aQE_Bxbq7VJuXOyj2Q_FN_nsIc4WEp6HH2erKNWFQbMD95Huda4zzdlh7iaPUjvLr58FnhkYlIHKR0dpXtyTqrrSkxPi45HyWi1OF-ls"
+  },
+  "origin": "STITCH",
+  "deviceType": "DESKTOP",
+  "designTheme": {
+    "colorMode": "LIGHT",
+    "font": "PLAYFAIR_DISPLAY",
+    "roundness": "ROUND_EIGHT",
+    "customColor": "#9b6250",
+    "headlineFont": "PLAYFAIR_DISPLAY",
+    "bodyFont": "PLUS_JAKARTA_SANS",
+    "labelFont": "PLUS_JAKARTA_SANS",
+    "namedColors": {
+      "surface_container_high": "#ebe8e3",
+      "on_secondary": "#ffffff",
+      "on_primary_fixed_variant": "#6a3a2a",
+      "surface_container_lowest": "#ffffff",
+      "on_surface": "#1c1c19",
+      "on_secondary_fixed_variant": "#3d4a39",
+      "secondary_container": "#d5e4cc",
+      "outline": "#84736e",
+      "on_error": "#ffffff",
+      "on_secondary_fixed": "#121f10",
+      "primary": "#7f4a3a",
+      "background": "#fcf9f4",
+      "surface_container_highest": "#e5e2dd",
+      "secondary": "#54624f",
+      "on_tertiary_container": "#fff3f0",
+      "error": "#ba1a1a",
+      "surface_container": "#f0ede9",
+      "inverse_on_surface": "#f3f0eb",
+      "tertiary_container": "#976452",
+      "inverse_surface": "#31302d",
+      "on_primary": "#ffffff",
+      "surface_dim": "#dcdad5",
+      "surface_tint": "#86503f",
+      "primary_fixed_dim": "#fcb6a0",
+      "on_tertiary_fixed": "#331205",
+      "secondary_fixed": "#d8e7cf",
+      "tertiary_fixed_dim": "#f7b8a2",
+      "surface_variant": "#e5e2dd",
+      "on_primary_container": "#fff3f0",
+      "outline_variant": "#d7c2bc",
+      "on_surface_variant": "#52443f",
+      "on_secondary_container": "#586753",
+      "on_error_container": "#93000a",
+      "primary_fixed": "#ffdbd0",
+      "inverse_primary": "#fcb6a0",
+      "surface": "#fcf9f4",
+      "primary_container": "#9b6250",
+      "on_tertiary_fixed_variant": "#673b2b",
+      "tertiary": "#7b4c3b",
+      "surface_container_low": "#f6f3ee",
+      "error_container": "#ffdad6",
+      "surface_bright": "#fcf9f4",
+      "on_tertiary": "#ffffff",
+      "tertiary_fixed": "#ffdbcf",
+      "on_primary_fixed": "#351004",
+      "secondary_fixed_dim": "#bccbb4",
+      "on_background": "#1c1c19"
+    },
+    "designMd": "---\nname: Atelier Botânico & Cachos\ncolors:\n  surface: '#fcf9f4'\n  surface-dim: '#dcdad5'\n  surface-bright: '#fcf9f4'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f6f3ee'\n  surface-container: '#f0ede9'\n  surface-container-high: '#ebe8e3'\n  surface-container-highest: '#e5e2dd'\n  on-surface: '#1c1c19'\n  on-surface-variant: '#52443f'\n  inverse-surface: '#31302d'\n  inverse-on-surface: '#f3f0eb'\n  outline: '#84736e'\n  outline-variant: '#d7c2bc'\n  surface-tint: '#86503f'\n  primary: '#7f4a3a'\n  on-primary: '#ffffff'\n  primary-container: '#9b6250'\n  on-primary-container: '#fff3f0'\n  inverse-primary: '#fcb6a0'\n  secondary: '#54624f'\n  on-secondary: '#ffffff'\n  secondary-container: '#d5e4cc'\n  on-secondary-container: '#586753'\n  tertiary: '#7b4c3b'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#976452'\n  on-tertiary-container: '#fff3f0'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#ffdbd0'\n  primary-fixed-dim: '#fcb6a0'\n  on-primary-fixed: '#351004'\n  on-primary-fixed-variant: '#6a3a2a'\n  secondary-fixed: '#d8e7cf'\n  secondary-fixed-dim: '#bccbb4'\n  on-secondary-fixed: '#121f10'\n  on-secondary-fixed-variant: '#3d4a39'\n  tertiary-fixed: '#ffdbcf'\n  tertiary-fixed-dim: '#f7b8a2'\n  on-tertiary-fixed: '#331205'\n  on-tertiary-fixed-variant: '#673b2b'\n  background: '#fcf9f4'\n  on-background: '#1c1c19'\n  surface-variant: '#e5e2dd'\ntypography:\n  display-hero:\n    fontFamily: Playfair Display\n    fontSize: 56px\n    fontWeight: '600'\n    lineHeight: 64px\n    letterSpacing: -0.02em\n  display-hero-mobile:\n    fontFamily: Playfair Display\n    fontSize: 36px\n    fontWeight: '600'\n    lineHeight: 44px\n    letterSpacing: -0.01em\n  headline-lg:\n    fontFamily: Playfair Display\n    fontSize: 40px\n    fontWeight: '600'\n    lineHeight: 48px\n    letterSpacing: -0.015em\n  headline-lg-mobile:\n    fontFamily: Playfair Display\n    fontSize: 28px\n    fontWeight: '600'\n    lineHeight: 36px\n  headline-md:\n    fontFamily: Playfair Display\n    fontSize: 28px\n    fontWeight: '500'\n    lineHeight: 36px\n  headline-sm:\n    fontFamily: Playfair Display\n    fontSize: 22px\n    fontWeight: '500'\n    lineHeight: 30px\n  title-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 18px\n    fontWeight: '600'\n    lineHeight: 26px\n  title-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 16px\n    fontWeight: '600'\n    lineHeight: 24px\n  body-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: 28px\n  body-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 15px\n    fontWeight: '400'\n    lineHeight: 24px\n  body-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 13px\n    fontWeight: '400'\n    lineHeight: 20px\n  label-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 13px\n    fontWeight: '600'\n    lineHeight: 18px\n    letterSpacing: 0.04em\n  label-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 11px\n    fontWeight: '600'\n    lineHeight: 16px\n    letterSpacing: 0.06em\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  space-2xs: 0.25rem\n  space-xs: 0.5rem\n  space-sm: 0.75rem\n  space-md: 1rem\n  space-lg: 1.5rem\n  space-xl: 2rem\n  space-2xl: 3rem\n  space-3xl: 4.5rem\n  space-4xl: 6rem\n  gutter: 1.5rem\n  margin-mobile: 1.25rem\n  margin-desktop: 3rem\n---\n\n## Brand & Style\nThis design system defines an upscale, organic, and welcoming digital experience for a specialized beauty clinic and hair atelier catering to textured and curly hair, facial aesthetics, and holistic self-care. It bridges clinical expertise with the tranquil warmth of an earthy sanctuary. The brand architecture accommodates a diverse family audience—women, men, and children—without falling into clinical coldness or gendered clichés.\n\nThe design movement combines **Warm Organic Minimalism** with **Editorial High-End Wellness**:\n- Generous breathing room, rhythmic white/creme space, and subtle organic line art.\n- Human-centric imagery displaying natural hair textures, authentic smiles, and calm restorative procedures.\n- A grounded, approachable luxury that feels inclusive, tactile, and protective.\n\n## Colors\nThe palette balances warm terracotta earths, serene botanical sage, luminous nude backgrounds, and rich roasted coffee typography:\n\n- **Primary (`#9B6250` - Terracota Nobre):** Conveys craft, earthiness, and warmth. Applied to primary CTAs, active highlights, key accents, and prominent badge backgrounds.\n- **Secondary (`#52604D` - Sálvia Botânica):** Evokes calm, balance, natural hair wellness, and botanical therapy. Used for balance chips, trust indicators, secondary icons, and alternating feature cards.\n- **Tertiary (`#C48B77` - Rosa Queimado Nude):** Soft transitional tone used for tags, hover states, warm borders, and card backing glows.\n- **Neutral Foundation (`#FAF7F2` - Creme Alabastro):** The primary canvas background, avoiding stark digital white in favor of soft linen warmth.\n- **Surface Elevation (`#F3ECE2` - Nude Aveia):** Layered card containers, subtle inputs, and alternating section strips.\n- **Typography Deep Contrast (`#2C2320` - Marrom Café Profundo):** Highest accessible contrast for body copy and headlines, replacing harsh pure black `#000000` with an organic espresso tint.\n- **Supportive Accents:** Muted border lines at `#E8DDD2` and soft sage highlights at `#6B7C62`.\n\n## Typography\nThe system pairs an editorial serif with an approachable geometric sans-serif to bridge beauty magazine refinement and everyday booking clarity:\n\n- **Playfair Display:** Communicates elegance, artisanal knowledge, and boutique salon luxury. Reserved for primary editorial headings, hero statements, and section intros.\n- **Plus Jakarta Sans:** Provides clean readability across dense pricing tables, booking flows, service descriptions, and responsive mobile interfaces.\n- **Letter Spacing & Casing:** Labels and category eyebrows employ slight uppercase tracking (`0.04em` to `0.06em`) for disciplined editorial rhythm, while headlines feature subtle negative kerning for cohesive display hierarchy.\n\n## Layout & Spacing\nA 12-column responsive fluid grid anchored by generous vertical rhythm:\n\n- **Desktop (1200px+):** Max content width capped at `1280px`. 12-column grid with `24px` gutters and `48px` outer margins. Hero and testimonial blocks lean into asymmetric groupings (e.g., 5-column editorial text balanced against 7-column portrait photography).\n- **Tablet (768px - 1199px):** 8 columns, `20px` gutters, `32px` outer margins. Service tiers collapse into 2-column card structures.\n- **Mobile (< 768px):** 4 columns with `16px` gutters and `20px` margins. Visual stacks collapse vertically, maintaining horizontal snap-scrolling carousels for treatment cards and stylist showcases.\n- **Vertical Rhythm:** Minimum `space-3xl` (`4.5rem`) section separations on desktop, reducing to `space-2xl` (`3rem`) on mobile to preserve spa-like expansiveness.\n\n## Elevation & Depth\nIn place of heavy drop shadows or glassy gradients, visual hierarchy is established through **warm tonal layering** and **whisper-soft ambient diffusion**:\n\n- **Tonal Stepping:** The canvas rests at `#FAF7F2`. Raised service cards and containers elevate to `#FFFFFF` or sink gently to `#F3ECE2`, framed by a fine border (`1px solid #E8DDD2`).\n- **Warm Ambient Shadow:** Floating dropdowns, sticky booking headers, and modal dialogues employ a low-opacity shadow tinted with warm café umber:\n  `box-shadow: 0 12px 32px -8px rgba(44, 35, 32, 0.07), 0 4px 12px -2px rgba(44, 35, 32, 0.04)`.\n- **Active / Hover State:** Cards scale smoothly (`translateY(-2px)`) with shadow bloom increasing to `rgba(155, 98, 80, 0.12)`.\n\n## Shapes\nRoundedness level `2` sets structural radii at `0.5rem` (`8px`) for compact items, expanding to `1rem` (`16px`) and `1.5rem` (`24px`) for prominent cards and portrait viewports. This matches the biological curves of natural curls and waves:\n\n- **Containers & Treatment Cards:** `16px` (`rounded-lg`) to `20px` corner radii.\n- **Buttons, Form Inputs, and Selectors:** Gentle organic rounded corners at `8px` (`rounded-md`), with pill-shaped variations (`rounded-full`) reserved exclusively for interactive category filters and status chips.\n- **Media Containers:** Asymmetric archways or dual-corner rounding (e.g., top-left and bottom-right at `32px`) can be used for feature hero photography.\n\n## Components\n\n### Buttons\n- **Primary Action (Agendar / Reservar):** Solid Terracota (`#9B6250`) background, crisp `#FAF7F2` text, `0.5rem` radius, with subtle hover lift and color transition to `#875343`.\n- **Secondary Action (Conhecer Tratamentos):** Bordered variant with `1.5px solid #52604D`, Sálvia text, transparent background transitioning to soft olive tint (`#52604D0F`) on hover.\n- **Tertiary / Link Action:** Editorial underline in `#9B6250` with trailing inline arrow.\n\n### Cards & Service Tiles\n- **Treatment Card:** Background `#FFFFFF`, border `1px solid #E8DDD2`, padding `1.5rem`, `rounded-lg` (`16px`). Upper half hosts portrait photography with subtle zoom on hover. Includes category tag, service title, duration indicator, and starting price.\n- **Audience Segment Card (Cachos, Masculino, Infantil, Estética Facial):** Subtle tonal container in `#F3ECE2` paired with an earthy icon and high-legibility sans-serif copy.\n\n### Chips & Filters\n- **Filter Chips:** Pill-shaped (`9999px`), `0.75rem` vertical by `1rem` horizontal padding. Inactive: `#FFFFFF` with `1px solid #E8DDD2` and `#2C2320` text. Active: Filled `#52604D` with `#FAF7F2` text.\n\n### Form Inputs & Booking Pickers\n- **Text Inputs & Dropdowns:** Background `#FFFFFF` or `#F3ECE2` with `1px solid #E8DDD2`, `8px` radius. Focus ring: `2px solid #9B6250` with `2px` offset. Placeholder text in `#8C817B`.\n- **Date & Specialist Selection:** Square-rounded tiles with day, date, and availability status. Selected state utilizes Terracota border with warm tint fill.\n\n### Testimonials & Reviews\n- Quotation blocks featuring a large decorative Playfair quotation mark in `#C48B77`, star ratings in `#9B6250`, accompanied by client hair type and procedure tags (e.g., *Transição Capilar*, *Harmonização Natural*, *Corte Infantil Afetivo*).",
+    "colorVariant": "FIDELITY",
+    "overridePrimaryColor": "#9b6250",
+    "overrideSecondaryColor": "#52604d",
+    "overrideTertiaryColor": "#c48b77",
+    "overrideNeutralColor": "#faf7f2",
+    "spacingScale": 2,
+    "typography": {
+      "title-sm": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "lineHeight": "24px"
+      },
+      "headline-sm": {
+        "fontFamily": "Playfair Display",
+        "fontSize": "22px",
+        "fontWeight": "500",
+        "lineHeight": "30px"
+      },
+      "label-md": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "lineHeight": "18px",
+        "letterSpacing": "0.04em"
+      },
+      "label-sm": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "11px",
+        "fontWeight": "600",
+        "lineHeight": "16px",
+        "letterSpacing": "0.06em"
+      },
+      "headline-md": {
+        "fontFamily": "Playfair Display",
+        "fontSize": "28px",
+        "fontWeight": "500",
+        "lineHeight": "36px"
+      },
+      "body-lg": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "18px",
+        "fontWeight": "400",
+        "lineHeight": "28px"
+      },
+      "body-sm": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "lineHeight": "20px"
+      },
+      "display-hero-mobile": {
+        "fontFamily": "Playfair Display",
+        "fontSize": "36px",
+        "fontWeight": "600",
+        "lineHeight": "44px",
+        "letterSpacing": "-0.01em"
+      },
+      "headline-lg-mobile": {
+        "fontFamily": "Playfair Display",
+        "fontSize": "28px",
+        "fontWeight": "600",
+        "lineHeight": "36px"
+      },
+      "headline-lg": {
+        "fontFamily": "Playfair Display",
+        "fontSize": "40px",
+        "fontWeight": "600",
+        "lineHeight": "48px",
+        "letterSpacing": "-0.015em"
+      },
+      "title-md": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "lineHeight": "26px"
+      },
+      "display-hero": {
+        "fontFamily": "Playfair Display",
+        "fontSize": "56px",
+        "fontWeight": "600",
+        "lineHeight": "64px",
+        "letterSpacing": "-0.02em"
+      },
+      "body-md": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "lineHeight": "24px"
+      }
+    },
+    "spacing": {
+      "margin-mobile": "1.25rem",
+      "gutter": "1.5rem",
+      "space-xl": "2rem",
+      "space-2xs": "0.25rem",
+      "space-4xl": "6rem",
+      "margin-desktop": "3rem",
+      "space-2xl": "3rem",
+      "space-xs": "0.5rem",
+      "space-3xl": "4.5rem",
+      "space-sm": "0.75rem",
+      "space-md": "1rem",
+      "space-lg": "1.5rem"
+    },
+    "headlineFontFamily": "Playfair Display",
+    "bodyFontFamily": "Plus Jakarta Sans",
+    "labelFontFamily": "Plus Jakarta Sans"
+  },
+  "screenInstances": [
+    {
+      "id": "0f5fcb67-dd2d-4506-b65f-a19145c4c3d9",
+      "sourceScreen": "projects/4492485437438582406/screens/18439620361694238143",
+      "width": 512,
+      "height": 748,
+      "type": "SCREEN_INSTANCE"
+    },
+    {
+      "id": "202a4031-3931-44e5-8c48-d1825a690a28",
+      "sourceScreen": "projects/4492485437438582406/screens/18439620361694239929",
+      "x": 1728,
+      "width": 512,
+      "height": 768,
+      "type": "SCREEN_INSTANCE"
+    },
+    {
+      "id": "2d019e99-86dc-4a9e-9d8e-9ffab0c6a962",
+      "sourceScreen": "projects/4492485437438582406/screens/18439620361694237373",
+      "x": 576,
+      "width": 512,
+      "height": 5708,
+      "type": "SCREEN_INSTANCE"
+    },
+    {
+      "id": "3379e3e8e43a45e0aca9e678a5d8b72a",
+      "sourceScreen": "projects/4492485437438582406/screens/3379e3e8e43a45e0aca9e678a5d8b72a",
+      "x": 5248,
+      "width": 1280,
+      "height": 1024,
+      "isResized": true
+    },
+    {
+      "id": "35158eb9-0ec1-434f-9837-0d9c057bf9f5",
+      "sourceScreen": "projects/4492485437438582406/screens/18439620361694240699",
+      "x": 1152,
+      "width": 512,
+      "height": 1024,
+      "type": "SCREEN_INSTANCE"
+    },
+    {
+      "id": "7f6feedb48fc45fab359c842f0a4de8f",
+      "sourceScreen": "projects/4492485437438582406/screens/7f6feedb48fc45fab359c842f0a4de8f",
+      "x": 3328,
+      "width": 512,
+      "height": 512
+    },
+    {
+      "id": "assets_e4c6c3e8563544beb86ffe93968d2e70",
+      "x": 2315,
+      "width": 960,
+      "height": 540,
+      "sourceAsset": "assets/e4c6c3e8563544beb86ffe93968d2e70",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "d56edfa40dbf4a8f922fb28f00e52c90",
+      "sourceScreen": "projects/4492485437438582406/screens/d56edfa40dbf4a8f922fb28f00e52c90",
+      "x": 6592,
+      "width": 512,
+      "height": 279
+    },
+    {
+      "id": "f0b5aa3048dc4ce699688167e43f440c",
+      "sourceScreen": "projects/4492485437438582406/screens/f0b5aa3048dc4ce699688167e43f440c",
+      "x": 3904,
+      "width": 1280,
+      "height": 6801
+    }
+  ],
+  "metadata": {
+    "userRole": "OWNER"
+  }
+}
