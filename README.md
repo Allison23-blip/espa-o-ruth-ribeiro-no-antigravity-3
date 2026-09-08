@@ -24,7 +24,6 @@ O **Espaço Ruth Ribeiro / Atelier Botânico & Cachos** é uma plataforma digita
    - **Finalização direta via WhatsApp** com dados e mensagem formatada.
 3. **[servicos.html](file:///c:/A-%20Antigravityt/espa%C3%A7o%20ruth%20ribeiro%20no%20antigravity%203/servicos.html)** — *Cardápio Completo*: Catálogo editorial aprofundado dos 5 pilares do Atelier com protocolos e valores.
 4. **[sobre.html](file:///c:/A-%20Antigravityt/espa%C3%A7o%20ruth%20ribeiro%20no%20antigravity%203/sobre.html)** — *Quem Somos*: A trajetória da fundadora Ruth Ribeiro, filosofia botânica e tour pelo espaço.
-5. **[agendamento.html](file:///c:/A-%20Antigravityt/espa%C3%A7o%20ruth%20ribeiro%20no%20antigravity%203/agendamento.html)** — *Agendamento Rápido*: Fluxo guiado em 4 etapas.
 
 ---
 
