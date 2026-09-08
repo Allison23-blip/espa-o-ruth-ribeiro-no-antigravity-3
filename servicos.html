@@ -148,78 +148,124 @@
 <!-- Services Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="servicesGrid">
 <!-- CATEGORIA 1: DEPILAÇÃO -->
-<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
-<div>
-<div class="flex items-center justify-between gap-space-xs mb-space-xs">
-<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Depilação Facial</span>
-<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
-<span class="material-symbols-outlined text-[16px]">schedule</span> 15 min
-              </span>
-</div>
-<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Buço ou Queixo com Cera Resinada</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Aplicação delicada com cera hipoalergênica resinada calmante. Sem ardência ou vermelhidão excessiva.</p>
-</div>
-<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
-<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 25</span>
-<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Buço ou Queixo">
-      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
-      <span class="btn-label">Reservar</span>
-    </button>
-</div>
-</div>
+<!-- 1. Depilação de Pernas (2 Opções: Meia Perna / Pernas Completas) -->
 <div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
 <div>
 <div class="flex items-center justify-between gap-space-xs mb-space-xs">
 <span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Depilação Corporal</span>
 <span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
-<span class="material-symbols-outlined text-[16px]">schedule</span> 20 min
+<span class="material-symbols-outlined text-[16px]">schedule</span> <span class="service-time-value">45 min</span>
               </span>
 </div>
-<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Axilas + Argiloterapia Pós</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Remoção suave seguida de máscara de argila branca botânica para clarear e acalmar a região imediatamente.</p>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Depilação de Pernas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Depilação completa ou meia perna, com cera de alta qualidade e após produtos cosméticos.</p>
+
+<!-- Seletor de Opções (Meia Perna / Pernas Completas) -->
+<div class="mt-space-sm pt-space-xs border-t border-surface-container/60">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Escolha a opção:</span>
+<span class="text-xs font-bold text-primary selected-variant-indicator">Meia Perna (R$ 50)</span>
+</div>
+<div class="grid grid-cols-2 gap-2 service-variant-selector">
+<button type="button" 
+        class="variant-btn active px-2.5 py-2 rounded-xl text-xs font-semibold border-2 border-primary bg-primary/10 text-primary transition-all text-center flex flex-col items-center justify-center cursor-pointer shadow-sm"
+        data-variant-name="Meia Perna"
+        data-price="50"
+        data-duration="45"
+        data-duration-text="45 min">
+  <span class="font-bold">Meia Perna</span>
+  <span class="text-[11px] opacity-90 mt-0.5 font-semibold">R$ 50 • 45 min</span>
+</button>
+<button type="button" 
+        class="variant-btn px-2.5 py-2 rounded-xl text-xs font-semibold border border-surface-container-highest bg-surface-container-low text-on-surface-variant hover:border-primary/40 hover:text-primary transition-all text-center flex flex-col items-center justify-center cursor-pointer"
+        data-variant-name="Pernas Completas"
+        data-price="70"
+        data-duration="60"
+        data-duration-text="1 hora">
+  <span class="font-bold">Pernas Completas</span>
+  <span class="text-[11px] opacity-90 mt-0.5 font-semibold">R$ 70 • 1 hora</span>
+</button>
+</div>
+</div>
 </div>
 <div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
-<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 38</span>
-<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Axilas com Argiloterapia">
+<span class="font-headline-sm text-headline-sm text-primary font-bold service-price-value">R$ 50</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" 
+        data-service="Depilação de Pernas (Meia Perna)" 
+        data-price="50" 
+        data-duration="45">
       <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
       <span class="btn-label">Reservar</span>
     </button>
 </div>
 </div>
-<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between relative overflow-hidden group" data-service-cat="depilacao">
-<div class="absolute top-0 right-0 bg-primary text-on-primary font-label-sm text-label-sm px-space-md py-space-2xs rounded-bl-lg shadow-sm">Destaque Sem Dor</div>
-<div>
-<div class="flex items-center justify-between gap-space-xs mb-space-xs">
-<span class="px-space-xs py-space-2xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Íntima Humanizada</span>
-<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
-<span class="material-symbols-outlined text-[16px]">schedule</span> 35 min
-              </span>
-</div>
-<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Virilha Completa com Anestésico Natural</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Método exclusivo com cera quente elástica à base de camomila e calêndula. Toque suave sem puxão brusco.</p>
-</div>
-<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
-<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 75</span>
-<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Virilha Completa Humanizada">
-      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
-      <span class="btn-label">Reservar</span>
-    </button>
-</div>
-</div>
+
+<!-- 2. Depilação de Axilas -->
 <div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
 <div>
 <div class="flex items-center justify-between gap-space-xs mb-space-xs">
-<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Pernas</span>
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Depilação Corporal</span>
 <span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
-<span class="material-symbols-outlined text-[16px]">schedule</span> 30 min
+<span class="material-symbols-outlined text-[16px]">schedule</span> <span class="service-time-value">30 min</span>
               </span>
 </div>
-<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Meia Perna ou Perna Inteira</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Aplicação em roll-on aquecido com hidratação finalizadora de melaleuca e óleo de amêndoas.</p>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Depilação de Axilas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Rapidez e conforto para pele livre de pelos por mais tempo.</p>
 </div>
 <div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
-<span class="font-headline-sm text-headline-sm text-primary font-bold">a partir R$ 45</span>
-<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" data-service="Depilação Perna">
+<span class="font-headline-sm text-headline-sm text-primary font-bold service-price-value">R$ 18</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" 
+        data-service="Depilação de Axilas" 
+        data-price="18" 
+        data-duration="30">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+
+<!-- 3. Depilação de Braços -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Depilação Corporal</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> <span class="service-time-value">50 min</span>
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Depilação de Braços</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tratamento livre e duradouro para braços e pernas completas.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold service-price-value">R$ 45</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" 
+        data-service="Depilação de Braços" 
+        data-price="45" 
+        data-duration="50">
+      <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+      <span class="btn-label">Reservar</span>
+    </button>
+</div>
+</div>
+
+<!-- 4. Depilação de Buço -->
+<div class="service-card p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:ring-1 hover:ring-primary/20 transition-all flex flex-col justify-between group" data-service-cat="depilacao">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105">Depilação Facial</span>
+<span class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> <span class="service-time-value">5 min</span>
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-space-2xs group-hover:text-primary transition-colors">Depilação de Buço</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Remoção precisa dos pelos do buço, com técnica delicada.</p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold service-price-value">R$ 8</span>
+<button type="button" class="btn-reservar-card px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-title-sm text-title-sm transition-all duration-300 hover:shadow-md transform active:scale-95 flex items-center gap-1.5 cursor-pointer" 
+        data-service="Depilação de Buço" 
+        data-price="8" 
+        data-duration="5">
       <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
       <span class="btn-label">Reservar</span>
     </button>
@@ -645,25 +691,74 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2800);
   }
 
-  // 2. Click handler on each card's "Reservar" button
+  // 2. Interactive Variant Selectors for cards with options
+  document.querySelectorAll('.service-card').forEach(card => {
+    const variantBtns = card.querySelectorAll('.variant-btn');
+    if (variantBtns.length > 0) {
+      const priceEl = card.querySelector('.service-price-value');
+      const timeEl = card.querySelector('.service-time-value');
+      const reserveBtn = card.querySelector('.btn-reservar-card');
+      const indicator = card.querySelector('.selected-variant-indicator');
+      const titleEl = card.querySelector('h3');
+      const baseName = titleEl ? titleEl.textContent.trim() : 'Serviço';
+
+      variantBtns.forEach(vBtn => {
+        vBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+
+          variantBtns.forEach(b => {
+            b.classList.remove('active', 'border-2', 'border-primary', 'bg-primary/10', 'text-primary', 'shadow-sm');
+            b.classList.add('border', 'border-surface-container-highest', 'bg-surface-container-low', 'text-on-surface-variant');
+          });
+
+          vBtn.classList.remove('border', 'border-surface-container-highest', 'bg-surface-container-low', 'text-on-surface-variant');
+          vBtn.classList.add('active', 'border-2', 'border-primary', 'bg-primary/10', 'text-primary', 'shadow-sm');
+
+          const variantName = vBtn.dataset.variantName || '';
+          const price = parseInt(vBtn.dataset.price);
+          const duration = parseInt(vBtn.dataset.duration);
+          const durationText = vBtn.dataset.durationText || `${duration} min`;
+
+          if (priceEl) priceEl.textContent = `R$ ${price}`;
+          if (timeEl) timeEl.textContent = durationText;
+          if (indicator) indicator.textContent = `${variantName} (R$ ${price})`;
+          if (reserveBtn) {
+            reserveBtn.dataset.service = `${baseName} (${variantName})`;
+            reserveBtn.dataset.price = price;
+            reserveBtn.dataset.duration = duration;
+          }
+        });
+      });
+    }
+  });
+
+  // 3. Click handler on each card's "Reservar" button
   serviceCards.forEach(card => {
     const btn = card.querySelector('.btn-reservar-card');
     const titleEl = card.querySelector('h3');
     const priceEl = card.querySelector('.border-t span.font-headline-sm');
-    const durationEl = card.querySelector('.material-symbols-outlined[textContent="schedule"]') || card.querySelector('span[class*="body-sm"]');
     const catBadge = card.querySelector('span[class*="label-sm"]');
 
     if (btn && titleEl && priceEl) {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const name = titleEl.textContent.trim();
-        const priceMatch = priceEl.textContent.match(/\d+/);
-        const price = priceMatch ? parseInt(priceMatch[0]) : 50;
+        const name = btn.dataset.service || titleEl.textContent.trim();
         
-        let duration = 30;
-        const text = card.textContent;
-        const timeMatch = text.match(/(\d+)\s*min/);
-        if (timeMatch) duration = parseInt(timeMatch[1]);
+        let price = btn.dataset.price ? parseInt(btn.dataset.price) : null;
+        if (!price) {
+          const priceMatch = priceEl.textContent.match(/\d+/);
+          price = priceMatch ? parseInt(priceMatch[0]) : 50;
+        }
+        
+        let duration = btn.dataset.duration ? parseInt(btn.dataset.duration) : null;
+        if (!duration) {
+          const text = card.textContent;
+          const timeMatch = text.match(/(\d+)\s*min/);
+          if (timeMatch) duration = parseInt(timeMatch[1]);
+          else if (text.includes('1 hora') || text.includes('1h')) duration = 60;
+          else duration = 30;
+        }
 
         const category = catBadge ? catBadge.textContent.trim() : 'Atelier';
 
