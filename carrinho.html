@@ -193,7 +193,7 @@
             <span class="material-symbols-outlined text-terracota text-2xl">event</span>
             <div>
               <h2 class="font-serif text-xl text-cafe font-medium">Escolha o Dia do Atendimento</h2>
-              <p class="text-xs text-[#52443f]">Selecione a data que melhor se adapta à sua rotina (Terça a Sábado)</p>
+              <p class="text-xs text-[#52443f]">Selecione a data que melhor se adapta à sua rotina (Segunda a Sábado)</p>
             </div>
           </div>
 
@@ -332,7 +332,7 @@
             </div>
             <div>
               <label for="client-phone" class="block text-xs font-semibold text-cafe uppercase tracking-wider mb-1.5">WhatsApp / Telefone *</label>
-              <input type="tel" id="client-phone" placeholder="Ex: (11) 98765-4321" class="w-full rounded-lg border-borda bg-creme/50 text-sm px-4 py-3 focus:border-terracota focus:ring-terracota">
+              <input type="tel" id="client-phone" placeholder="Ex: (94) 99186-3264" class="w-full rounded-lg border-borda bg-creme/50 text-sm px-4 py-3 focus:border-terracota focus:ring-terracota">
             </div>
             <div class="sm:col-span-2">
               <label for="client-notes" class="block text-xs font-semibold text-cafe uppercase tracking-wider mb-1.5">Observações ou Preferências (Opcional)</label>
@@ -464,14 +464,17 @@
           </ul>
         </div>
         <div>
-          <p class="text-xs font-semibold tracking-wider uppercase text-terracota mb-3">Atendimento</p>
-          <p class="text-sm text-[#52443f]">Terça a Sábado: 08:30 às 19:00</p>
-          <p class="text-sm text-[#52443f] mt-1">Av. das Palmeiras, 1420 - São Paulo, SP</p>
-          <p class="text-sm text-salvia font-medium mt-2">WhatsApp: (11) 98765-4321</p>
+          <p class="text-xs font-semibold tracking-wider uppercase text-terracota mb-3">Atendimento &amp; Endereço</p>
+          <p class="text-sm text-[#52443f] font-medium">Segunda a Sábado: 08:30 às 19:00</p>
+          <p class="text-sm font-serif font-semibold text-terracota mt-1">Espaço Ruth Ribeiro</p>
+          <p class="text-sm text-[#52443f]">R. Cinco, Eldorado do Carajás - PA, 68524-000</p>
+          <p class="text-sm text-salvia font-medium mt-2">
+            <a href="https://wa.me/5594991863264" target="_blank" class="hover:underline">WhatsApp: (94) 99186-3264</a>
+          </p>
         </div>
       </div>
       <div class="pt-6 border-t border-borda/60 text-center text-xs text-[#8c817b]">
-        © 2026 Espaço Ruth Ribeiro — Atelier Botânico &amp; Cachos. Todos os direitos reservados.
+        © 2026 Espaço Ruth Ribeiro. Todos os direitos reservados.
       </div>
     </div>
   </footer>
@@ -579,8 +582,8 @@
       while (added < 6) {
         cur.setDate(cur.getDate() + 1);
         const dayIdx = cur.getDay();
-        // Abrimos de Terça (2) a Sábado (6)
-        if (dayIdx >= 2 && dayIdx <= 6) {
+        // Abrimos de Segunda (1) a Sábado (6)
+        if (dayIdx >= 1 && dayIdx <= 6) {
           const dayName = daysOfWeek[dayIdx];
           const dayNum = String(cur.getDate()).padStart(2, '0');
           const monthName = months[cur.getMonth()];
@@ -623,7 +626,7 @@
 
     // Gerador de Horários
     function renderTimeSlots() {
-      const morningTimes = ["09:00", "09:45", "10:30", "11:15"];
+      const morningTimes = ["08:30", "09:30", "10:30", "11:15"];
       const afternoonTimes = ["13:30", "14:15", "15:00", "16:00", "17:00", "18:00"];
 
       function makeSlot(time, containerId) {
@@ -865,7 +868,7 @@
           if (clientNotes) message += `📝 *Observações:* ${clientNotes}\\n`;
           message += `\\n_Aguardo a confirmação do horário pela recepção!_`;
 
-          const encodedUrl = `https://wa.me/5511987654321?text=${encodeURIComponent(message.replace(/\\n/g, '\n'))}`;
+          const encodedUrl = `https://wa.me/5594991863264?text=${encodeURIComponent(message.replace(/\\n/g, '\n'))}`;
           window.open(encodedUrl, "_blank");
         });
       }
